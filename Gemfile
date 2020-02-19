@@ -73,6 +73,3 @@ gem 'carrierwave'
 gem 'fog-aws'
 gem 'mini_magick'
 gem 'haml-rails'
-gem 'erb2haml'
-gem 'rubocop', require: false
-gem 'font-awesome-sass'
