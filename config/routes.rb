@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root to: "tops#index"
+  root to: "informations#index"
   resources :informations, only: :index
   resources :tests, only: :show
   resources :users, only: :index do
