@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :informations, only: [:index]
   # resources :users, only: [:index]
   resources :tests, only: [:show]
-  resources :users do
+  resources :users, only: :index do
     collection do
       get :logout
       get :howToPay
