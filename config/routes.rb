@@ -6,6 +6,7 @@ Rails.application.routes.draw do
    #get 'users/logout' to: 'user#logout'
   resources :informations, only: [:index , :show]
   # resources :users, only: [:index]
+  resources :tests, only: [:show]
   resources :users do
     collection do
       get :logout
