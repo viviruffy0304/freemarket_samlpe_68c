@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root to: "users#howToPay"
+  root to: "tests#index"
   resources :informations, only: :index
   resources :tests, only: :show
   resources :users, only: :index do
