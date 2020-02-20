@@ -93,9 +93,9 @@
         .commentBox
           %ul.commentContents
           %form#new_comment.new_comment{"accept-charset" => "UTF-8", action: "#", method: "post"}
-            %input{:name => "utf8", :type => "hidden", :value => "✓"}/
-            %input{:name => "authenticity_token", :type => "hidden", :value => "1PuhorywqC433p1w71U8KpHqzdT94H503eClZIu3HLRmJeEixiBJNMNpXVqpDeodmDwaTFeOCy2Etm5TTmQRNg=="}/
-            %textarea#comment_body{:name => "comment[body]", :required => "required"}
+            %input{name: "utf8", type: "hidden", value: "✓"}/
+            %input{name: "authenticity_token", type: "hidden", value: "1PuhorywqC433p1w71U8KpHqzdT94H503eClZIu3HLRmJeEixiBJNMNpXVqpDeodmDwaTFeOCy2Etm5TTmQRNg=="}/
+            %textarea#comment_body{name: "comment[body]", required: "required"}
             %p.noticeMsg
               相手のことを考え丁寧なコメントを心がけましょう。
               %br/
