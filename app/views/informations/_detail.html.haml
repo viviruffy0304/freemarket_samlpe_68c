@@ -106,12 +106,14 @@
               コメントする
       %ul.links
         %li
-          %i.fa.fa-angle-left
-          =link_to "前の商品"
-          
+          %a{ href: "#"}
+            %i.fa.fa-angle-left
+            %span
+            前の商品
         %li
-          =link_to "後ろの商品"
-          %i.fa.fa-angle-right
+          %a{ href: "#"}
+            %span 後ろの商品
+            %i.fa.fa-angle-right
       .relatedItems
         =link_to "レディースをもっと見る"
         .productLists
