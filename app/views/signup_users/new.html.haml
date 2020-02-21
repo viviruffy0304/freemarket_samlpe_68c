@@ -233,35 +233,51 @@
                 and
                 %a{:href => "https://policies.google.com/terms", :target => "_blank"} Terms of Service
                 apply.
-    %footer.single-footer
-      %nav
-        %ul.clearfix
-          %li
-            %a{:href => "https://www.mercari.com/jp/privacy/"} プライバシーポリシー
-          %li
-            %a{:href => "https://www.mercari.com/jp/tos/"} メルカリ利用規約
-          %li
-            %a{:href => "https://www.mercari.com/jp/tokutei/"} 特定商取引に関する表記
-      %a.single-footer-logo{:href => "https://www.mercari.com/jp/"}
-        %img{:alt => "mercari", :height => "65", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?807465640", :width => "80"}/
-      %p
-        %small © Mercari, Inc.
-  %script{:src => "//www-mercari-jp.akamaized.net/assets/js/app.js?2734645555"}
-  / Google Tag Manager
-  :javascript
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-KLPT5L5');
-  / End Google Tag Manager
-  %div
-    .grecaptcha-badge{"data-style" => "bottomright", :style => "width: 256px; height: 60px; display: block; transition: right 0.3s ease 0s; position: fixed; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;"}
-      .grecaptcha-logo
-        %iframe{:frameborder => "0", :height => "60", :name => "a-u45w1hr4zfbf", :role => "presentation", :sandbox => "allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox", :scrolling => "no", :src => "https://www.google.com/recaptcha/api2/anchor?ar=2&k=6LelCcAUAAAAAGYBvpuT3hj7TOnrIElDM5ZsTuAy&co=aHR0cHM6Ly93d3cubWVyY2FyaS5jb206NDQz&hl=ja&v=n1ZaVsRK4TYyiKxYab0h8MUD&size=invisible&cb=nvqygzbczbuf", :width => "256"}
-      .grecaptcha-error
-      %textarea#g-recaptcha-response-100000.g-recaptcha-response{:name => "g-recaptcha-response", :style => "width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"}
-  %div{:style => "display: none; visibility: hidden;"}
-    :javascript
-      !function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","1964320460558899");fbq("track","PageView");
-    %noscript
+.footer
+  %ul.contentsBox
+    %li.contents
+      %h2.contents__head
+        FURIMAについて
+      %ul.content
+        %li
+          = link_to "#" do
+            会社概要（運営会社）
+        %li
+          = link_to "#" do
+            プライバシーポリシー
+        %li
+          = link_to "#" do
+            FURIMA利用規約
+        %li
+          = link_to "#" do
+            ポイントに関する特約
+    %li.contents
+      %h2.contents__head
+        FURIMAを見る
+      %ul.content
+        %li
+          = link_to "#" do
+            カテゴリー一覧
+        %li
+          = link_to "#" do
+            ブランド一覧
+
+    %li.contents
+      %h2.contents__head
+        ヘルプ&ガイド
+      %ul.content
+        %li
+          = link_to "#" do
+            FURIMAガイド
+        %li
+          = link_to "#" do
+            FURIMAロゴ利用ガイドライン
+        %li
+          = link_to "#" do
+            お知らせ
+
+  .footer__logo
+    = link_to image_tag('logo-white', class: 'logo__image'), "#"
+  %p.c_mark
+    © FURIMA
+    

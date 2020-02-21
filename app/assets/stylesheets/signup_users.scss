@@ -1,6 +1,6 @@
 .single-container {
   background-color: whitesmoke;
-  padding: 0 0 220px;
+  padding: 0 0 64px;
   .single-header {
     height: 128px;
     text-align: center;
@@ -19,7 +19,7 @@
     }
   }
 }
-main {
+.single-main {
   display: block;
   .l-single-container {
     width: 700px;
@@ -96,6 +96,12 @@ main {
         }
       }
     }
+  }
+}
+.single-footer{
+  text-align: center;
+  ul.clearfix {
+    padding-bottom: 20px;
   }
 }
 
