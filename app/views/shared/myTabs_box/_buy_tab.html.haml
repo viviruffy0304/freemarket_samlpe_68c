@@ -1,25 +1,27 @@
-.myPage_tab_notification
+.myPage_tab_buyItems
+  %h2.myPage_tab_head
+    購入した商品
   %ul.myList_tabs
     %li.notification_tab
       = link_to '#', class: "notification_link" do
         .notification_text
-          お知らせ
+          取引中
     %li.toDo_tab
       = link_to '#', class: "toDo_link" do
         .toDo_text
-          やることリスト
+          過去の取引
   %ul.tab_content_box
     %li.tab_content
       = link_to '#', class: "link_tab" do
         .image_content
-          = image_tag 'member_photo_noimage_thumb', class: 'image'
+          = image_tag 'member_photo_noimage_thumb.png', class: 'image'
         .textBox
-          《最大30,000円分！》あのぼったくりカレーがもらえるかもしれないキャンペーン実施中！
+          《なんと10,000円！》あの噂のカレーTシャツを転売中🍛👕✨
           .timeBox
             .timeIcon
               %i.far.fa-clock
             .timeNumberText
-              2
+              1256
             .timeText
               時間前
         %i.fas.fa-chevron-right
