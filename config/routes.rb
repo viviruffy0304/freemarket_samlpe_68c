@@ -2,9 +2,10 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  # root to: "products#index"
+  root to: "products#new"
   # get 'users/logout' to: 'user#logout'
-  root to: "informations#index"
+  # root to: "informations#index"
+  # root to: "users#index"
   resources :products, only: [:index]
   resources :informations, only: [:index]
   # resources :users, only: [:index]
