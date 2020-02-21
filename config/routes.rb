@@ -13,4 +13,6 @@ Rails.application.routes.draw do
       get :howToPay
     end
   end 
+
+  resources :signin_users, only: [:show]
 end

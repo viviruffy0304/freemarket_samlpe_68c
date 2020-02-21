@@ -1,6 +1,5 @@
 class SigninUsersController < ApplicationController
 
-  def index
-    
+  def show  
   end
 end
