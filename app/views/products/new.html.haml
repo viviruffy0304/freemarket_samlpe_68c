@@ -1,0 +1,45 @@
+.sell_container_back
+  .sell_container
+    .logoBox
+      = image_tag 'logo.png', class: 'logo'
+    = form_with(model: @item, local: true) do |form|
+      .product_information_container
+      
+        -# productImageBoxだが、使い回す
+        .product_Box
+          .topBox
+            .leftBox
+              出品画像
+            .rightBox
+              必須
+          .text
+            最大1枚までアップロードできます
+            = form.label '最大10枚までアップロードできます'
+          = form.label :image, class: "product_default_image" do
+            %i.fas.fa-camera
+            = form.file_field :image, class: "upload_image"
+              
+            .image_text
+              クリックしてファイルをアップロード
+        -# - if file.present
+        -# 以下product_nameBox
+      .product_information_container
+        .product_Box
+          .topBox
+            .leftBox
+              商品名
+            .rightBox
+              必須
+          = form.text_field :product_name, placeholder: "40文字以内", class: "product_name"
+        .product_Box
+          .topBox
+            .leftBox
+              商品の説明
+            .rightBox
+              必須
+          = form.text_area :explain_product, placeholder: "商品の説明（必須 1,000文字以内）", class: "explain_product"
+            
+          
+
+    
+    

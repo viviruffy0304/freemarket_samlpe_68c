@@ -72,6 +72,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'carrierwave'
 gem 'fog-aws'
 gem 'mini_magick'
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'haml-rails'
-gem 'font-awesome-sass',"< 5.0.13"
+gem 'font-awesome-rails'
