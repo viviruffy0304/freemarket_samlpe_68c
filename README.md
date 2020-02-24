@@ -27,8 +27,6 @@
 |municipalities|string|:null: false|
 |address|string|null: false|
 |building|string| |
-|d_first_name|string|null: false|
-|d_last-name|string|null: false|
 |phone_number|integer|null: false|
 ### Association
 - belongs_to :user
