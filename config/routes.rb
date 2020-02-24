@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :signup_users, only: [:index] do
     collection do
       get :done
+      get :address
     end
   end
 end

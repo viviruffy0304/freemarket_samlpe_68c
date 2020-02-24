@@ -4,4 +4,7 @@ class SignupUsersController < ApplicationController
 
   def done  
   end
+
+  def address
+  end
 end
