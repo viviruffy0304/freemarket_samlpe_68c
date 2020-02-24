@@ -73,4 +73,4 @@ gem 'carrierwave'
 gem 'fog-aws'
 gem 'mini_magick'
 gem 'haml-rails'
-gem 'font-awesome-rails'
+gem 'font-awesome-sass',"< 5.0.13"
