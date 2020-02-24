@@ -3,9 +3,10 @@ Rails.application.routes.draw do
 
   root to: "signup_users#index"
   resources :products, only: [:index]
-  resources :informations, only: [:index]
+  resources :informations, only: [:index , :show]
   resources :tests, only: :show
-  resources :users do
+  resources :signup_users, only: :new 
+  resources :users, only: :index do
     collection do
       get :logout
       get :howToPay
