@@ -1,7 +1,7 @@
-%body.address-container
-  %header.address-container--header
+.address-container
+  .address-container--header
     =link_to image_tag('logo.png', class: 'address--header--image'), "#"
-  %main.address-container--main
+  .address-container--main
     %section.address-container--main--registration
       %h2.address-container--main--registration--display お客さまの本人情報をご登録ください
       %form.address-container--main--registration--form{action: "https://www.mercari.com/jp/signup/sms_confirmation/sms/", method: "POST", novalidate: "novalidate"}
@@ -90,7 +90,7 @@
               %input.input-default{name: "building", placeholder: "例) 柳ビル103", type: "text", value: ""}/
             %button.btn-default.btn-red{type: "submit"} 登録する
 
-  %footer.mains__footer
+  .mains__footer
     %ul.mains__footer__content
       %li
         = link_to "#" do

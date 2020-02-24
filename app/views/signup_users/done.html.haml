@@ -1,7 +1,7 @@
-%body.done-container
-  %header.done-container--header
+.done-container
+  .done-container--header
     =link_to image_tag('logo.png', class: 'done--header--image'), "#"
-  %main.done-container--main
+  .done-container--main
     %section.done-container--main--display
       %h2.done-container--main--display--registration 会員登録完了
       .done-container--main--display--registration--form
@@ -12,7 +12,7 @@
             会員登録が完了しました。
           %a.btn-red{href: "/tops"}
             フリマをはじめる
-  %footer.mains__footer
+  .mains__footer
     %ul.mains__footer__content
       %li
         = link_to "#" do
