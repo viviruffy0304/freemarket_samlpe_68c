@@ -93,68 +93,12 @@
         .listsLeft__item--first{
           text-decoration: none;
           padding: 0 30px 0 0;
-          ul.menu__second-level {
-            position: absolute;
-            top: 40px;
-            width: 100%;
-            background: #072A24;
-            -webkit-transition: all .2s ease;
-            transition: all .2s ease;
-            &:hover.init-right {
-              top: 50px;
-              visibility: visible;
-              opacity: 1;
-            }
-            li {
-              position: relative;
-              &:hover {
-                background: #111;
-              }
-              ul.menu__third-level {
-                position: absolute;
-                top: -1px;
-                left: 100%;
-                width: 100%;
-                background: #111;
-                -webkit-transition: all .2s ease;
-                transition: all .2s ease;
-                &:hover ul.menu__third-level {
-                  visibility: visible;
-                  opacity: 1;
-                }
-                ul.menu__third-level li {
-                  position: relative;
-                  &:hover {
-                    background: #2a1f1f;
-                  }
-                  ul.menu__fourth-level {
-                    position: absolute;
-                    top: -1px;
-                    left: 100%;
-                    width: 100%;
-                    background: #2a1f1f;
-                    -webkit-transition: all .2s ease;
-                    transition: all .2s ease;
-                    &:hover ul.menu__fourth-level {
-                      visibility: visible;
-                      opacity: 1;
-                    }
-                  }
-                }
-              }
-            }
+          .listsLeft__item--first:hover .menu__second-level{
+            visibility: visible;
           }
-          .init-right:after {
-            content: '';
-            display: inline-block;
-            width: 6px;
-            height: 6px;
-            margin: 0 0 0 15px;
-            border-right: 1px solid #fff;
-            border-top: 1px solid #fff;
-            -webkit-transform: rotate(45deg);
-            -ms-transform: rotate(45deg);
-            transform: rotate(45deg);
+          .menu__second-level {
+            visibility: hidden;
+            cursor:  pointer;
           }
         }
         .listsRight__item--first{

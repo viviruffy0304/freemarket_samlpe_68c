@@ -13,6 +13,15 @@
       %ul.listsLeft
         %li.listsLeft__item.listsLeft__item--first
           = link_to "カテゴリー", "#", id: "catBtn"
+          %ul.menu__second-level
+            %li
+              %a.init-right{:href => "#"} Child Menu
+              %ul.menu__third-level
+                %li
+                  %a.init-right{:href => "#"} Grandchild Menu
+                  %ul.menu__fourth-level
+                    %li
+                      %a{:href => "#"} Great-Grandchild Menu
 
         %li.listsLeft__item.listsRight__item--first
           = link_to "ブランド", "#", id: "brandBtn"
