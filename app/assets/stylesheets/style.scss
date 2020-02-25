@@ -93,15 +93,27 @@
         .listsLeft__item--first{
           text-decoration: none;
           padding: 0 30px 0 0;
-          .listsLeft__item--first {
-            display: inline-block;
-          }
-          .listsLeft__item--first:hover .menu__second-level{
-            visibility: visible;
-          }
-          .menu__second-level {
-            visibility: hidden;
-            cursor:  pointer;
+          ul.menu__second-level {
+            li {
+              position: relative;
+              &:hover {
+                ul {
+                  li {
+                    display: block;
+                    height: 44px;
+                  }
+                }
+              }
+              ul {
+                position: absolute;
+                top: 44px;
+                z-index: 1000;
+                li {
+                  height: 0;
+                  display: none;
+                }
+              }
+            }
           }
         }
         .listsRight__item--first{
