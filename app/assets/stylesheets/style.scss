@@ -93,6 +93,9 @@
         .listsLeft__item--first{
           text-decoration: none;
           padding: 0 30px 0 0;
+          .listsLeft__item--first {
+            display: inline-block;
+          }
           .listsLeft__item--first:hover .menu__second-level{
             visibility: visible;
           }
