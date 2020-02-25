@@ -54,5 +54,13 @@ class SignupUsersController < ApplicationController
     )
   end
 
+  def done  
+  end
 
+  def address
+  end
+
+  def new
+  end
+  
 end

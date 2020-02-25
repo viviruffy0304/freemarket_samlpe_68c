@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
+
   root to: "informations#index"
+
   resources :products, only: [:index]
-  resources :informations, only: [:index]
+  resources :informations, only: [:index , :show]
   resources :tests, only: :show
-  resources :users do
+  resources :signup_users, only: :new 
+  resources :users, only: :index do
     collection do
       get :logout
       get :howToPay
@@ -13,6 +16,7 @@ Rails.application.routes.draw do
   end 
 
   resources :signin_users, only: [:show]
+
 
   resources :signup_users,  only: [:index, :create] do
     collection do
@@ -22,4 +26,12 @@ Rails.application.routes.draw do
     end
   end
   
+
+  #resources :signup_users, only: [:index] do
+    #collection do
+      #get :done
+      #get :address
+    #end
+  #end
+
 end
