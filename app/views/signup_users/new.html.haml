@@ -27,15 +27,12 @@
               %label{for: "password"} パスワード
               %span.form-require 必須
               %input.input-default{name: "password", placeholder: "7文字以上の半角英数字", type: "password"}
+            .form-group.form-password-confirm
+              %label{for: "password"} パスワード ( 確認 )
+              %span.form-require 必須
+              %input.input-default{name: "password", placeholder: "7文字以上の半角英数字", type: "password"}
               %p.form-info-text
                 ※ 英字と数字の両方を含めて設定してください
-              .form-password-revelation-toggle
-                .checkbox-default
-                  %input#reveal_password{type: "checkbox"}
-                  %i.icon-check
-                  %label{for: "reveal_password"} パスワードを表示する
-                .form-password-revelation-revealed-password-container
-                  %span.form-password-revelation-revealed-password
             .form-group
               %h3.text-left.l-chapter-sub-head 本人確認
               %p.l-single-text
