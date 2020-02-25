@@ -93,7 +93,33 @@
         .listsLeft__item--first{
           text-decoration: none;
           padding: 0 30px 0 0;
-          ul.menu__second-level {
+          ul {
+            li {
+              position: relative;
+              &:hover {
+                ul {
+                  li {
+                    display: block;
+                    height: 44px;
+                  }
+                }
+              }
+              ul {
+                position: absolute;
+                top: 44px;
+                z-index: 1000;
+                li {
+                  height: 0;
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+        .listsLeft__item--first{
+          text-decoration: none;
+          padding: 0 30px 0 0;
+          ul.menu__first-level {
             li {
               position: relative;
               &:hover {
@@ -118,7 +144,6 @@
         }
         .listsRight__item--first{
           padding: 0 16px 0 0;
-          
         }
       }
       .listsRight{
