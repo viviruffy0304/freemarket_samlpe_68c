@@ -13,28 +13,7 @@
       %ul.listsLeft
         %li.listsLeft__item.listsLeft__item--first
           = link_to "カテゴリー", "#", id: "catBtn"
-          %a.init-bottom{:href => "#"} Menu multi level
-          %ul.menu__second-level
-            / 第一階層
-            %li
-              %a.init-right{:href => "#"} Child Menu
-              %ul.menu__third-level
-                / 第二階層
-                %li
-                  %a.init-right{:href => "#"} Grandchild Menu
-                  %ul.menu__fourth-level
-                    / 第三階層
-                    %li
-                      %a{:href => "#"} Great-Grandchild Menu
-                    %li
-                      %a{:href => "#"} Great-Grandchild Menu
-                    %li
-                      %a{:href => "#"} Great-Grandchild Menu
-                %li
-                  %a{:href => "#"} Grandchild Menu
-                %li
-                  %a{:href => "#"} Grandchild Menu
-                  
+
         %li.listsLeft__item.listsRight__item--first
           = link_to "ブランド", "#", id: "brandBtn"
       %ul.listsRight
