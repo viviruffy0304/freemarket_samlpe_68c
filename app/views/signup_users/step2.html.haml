@@ -1,13 +1,12 @@
-= form_for @user, url: complete_signup_signup_index_path, method: :post do |f|
-  = hidden_field_tag :current_step, 'step3'
+= form_for @user, url: signup_users_path, method: :post do |f|
   = f.fields_for :address do |p|
 
     = p.label :postal_code, "郵便番号"
     = p.text_field :postal_code
 
     = p.label :prefectures, "都道府県"
-    = p.collection_select :prefectures
-
+    = p.select :prefectures, Address.prefectures.keys, {prompt: "選択してください"}, class: "form-controll"
+    
     = p.label :municipalities, "市区町村"
     = p.text_field :municipalities
 
