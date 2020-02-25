@@ -74,3 +74,5 @@ gem 'fog-aws'
 gem 'mini_magick'
 gem 'haml-rails'
 gem 'font-awesome-rails'
+
+gem 'ancestry'

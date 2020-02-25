@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :tests, only: :show
   resources :signup_users, only: :new 
   resources :users, only: :index do
+  
     collection do
       get :logout
       get :howToPay
