@@ -93,6 +93,7 @@
         .listsLeft__item--first{
           padding: 0 30px 0 0;
           ul.menu__first-level {
+            list-style-type: none;
             li {
               &:hover {
                 ul {
@@ -209,6 +210,7 @@
         .listsLeft__item--second{
           padding: 0 30px 0 0;
           ul.menu__first-level {
+            list-style-type: none;
             li {
               &:hover {
                 ul {
