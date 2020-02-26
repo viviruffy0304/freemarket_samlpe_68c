@@ -24,12 +24,12 @@ ActiveRecord::Schema.define(version: 2020_02_24_113232) do
     t.integer "brand_id"
     t.integer "category_id"
     t.string "name", limit: 25
+    t.integer "price"
     t.string "description"
     t.string "state"
     t.string "postage", limit: 25
     t.string "reigion"
     t.string "shipping_days", limit: 25
-    t.integer "price"
   end
 
 end
