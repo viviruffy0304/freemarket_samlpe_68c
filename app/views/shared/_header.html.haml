@@ -17,13 +17,15 @@
               = link_to "カテゴリー", "#", id: "brandBtn"
               %ul.menu__second-level
                 %li
-                  %a.init-right{:href => "#"} Child Menu
+                  %a.init-right
+                    = link_to"Child Menu", "#", id: "#"
                   %ul.menu__third-level
                     %li
-                      %a.init-right{:href => "#"} Grandchild Menu
+                      %a.init-right
+                        = link_to"Grandchild Menu", "#", id: "#"
                       %ul.menu__fourth-level
                         %li
-                          %a{:href => "#"} Great-Grandchild Menu
+                          = link_to"Great-grandchild Menu", "#", id: "#"
 
         .listsLeft__item--second
           = link_to "ブランド", "#", id: "brandBtn"
