@@ -31,7 +31,7 @@
 ### Association
 - belongs_to :user
 
-## creditsテーブル
+## cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|foreign_key :true|

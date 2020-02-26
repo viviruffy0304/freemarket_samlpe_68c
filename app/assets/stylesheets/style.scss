@@ -99,13 +99,16 @@
                 ul {
                   li {
                     display: block;
-                    height: 44px;
+                    height: 40px;
+                    width: 200px;
+                    text-align: left;
+                    padding-left: 10px;
                   }
                 }
               }
               ul {
                 position: absolute;
-                top: 44px;
+                top: 10px;
                 z-index: 1000;
                 li {
                   height: 0;
@@ -116,14 +119,18 @@
             ul.menu__second-level {
               background-color: #3CCACE;
               list-style-type: none;
-              position: relative;
+              position: absolute;
+              margin-top: 20px;
               li {
                 position: relative;
                 &:hover {
                   ul {
                     li {
                       display: block;
-                      height: 44px;
+                      height: 40px;
+                      width: 200px;
+                      text-align: left;
+                      padding-left: 10px;
                     }
                   }
                 }
@@ -137,13 +144,20 @@
                 }
               }
               ul.menu__third-level {
+                background-color: #3CCACE;
+                list-style-type: none;
+                justify-content: right;
+                margin-top: 20px;
                 li {
                   position: relative;
                   &:hover {
                     ul {
                       li {
                         display: block;
-                        height: 44px;
+                        height: 40px;
+                        width: 200px;
+                        text-align: left;
+                        padding-left: 10px;
                       }
                     }
                   }
@@ -158,13 +172,20 @@
                   }
                 }
                 ul.menu__fourth-level {
+                  background-color: #3CCACE;
+                  list-style-type: none;
+                  justify-content: right;
+                  margin-top: 20px;
                   li {
                     position: relative;
                     &:hover {
                       ul {
                         li {
                           display: block;
-                          height: 44px;
+                          height: 40px;
+                          width: 200px;
+                          text-align: left;
+                          padding-left: 10px;
                         }
                       }
                     }
