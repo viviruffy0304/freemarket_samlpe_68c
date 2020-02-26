@@ -91,7 +91,6 @@
         }
 
         .listsLeft__item--first{
-          text-decoration: none;
           padding: 0 30px 0 0;
           ul.menu__first-level {
             li {
@@ -117,10 +116,12 @@
               }
             }
             ul.menu__second-level {
-              background-color: #3CCACE;
+              background-color: #fff;
               list-style-type: none;
               position: absolute;
               margin-top: 20px;
+              margin-left: -20px;
+              border: solid 1px #3CCACE;
               li {
                 position: relative;
                 &:hover {
@@ -144,10 +145,12 @@
                 }
               }
               ul.menu__third-level {
-                background-color: #3CCACE;
+                background-color: #fff;
                 list-style-type: none;
-                justify-content: right;
-                margin-top: 20px;
+                position: absolute;
+                margin-top: -45px;
+                margin-left: 200px;
+                border: solid 1px #3CCACE;
                 li {
                   position: relative;
                   &:hover {
@@ -172,10 +175,12 @@
                   }
                 }
                 ul.menu__fourth-level {
-                  background-color: #3CCACE;
+                  background-color: #fff;
                   list-style-type: none;
-                  justify-content: right;
-                  margin-top: 20px;
+                  position: absolute;
+                  margin-top: -45px;
+                  margin-left: 200px;
+                  border: solid 1px #3CCACE;
                   li {
                     position: relative;
                     &:hover {
