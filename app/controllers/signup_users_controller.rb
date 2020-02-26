@@ -36,6 +36,10 @@ class SignupUsersController < ApplicationController
     end
   end
 
+  def complete
+    redirect_to users_path
+  end
+
   private
   def user_params
     params.require(:user).permit(
