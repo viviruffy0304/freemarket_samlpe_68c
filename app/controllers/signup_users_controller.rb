@@ -1,6 +1,6 @@
 class SignupUsersController < ApplicationController
   before_action :save_step1_to_session, only: :step2
-
+ 
 
   def index
   end
@@ -12,9 +12,7 @@ class SignupUsersController < ApplicationController
 
   def save_step1_to_session
     session[:user_params] = user_params
-    session[:address_attributes_after_step1] = user_params[:address_attributes]
     @user = User.new(session[:user_params])
-    @user.build_address(session[:address_attributes_after_step1])
     render '/signup_users/step1' unless @user.valid?
   end 
 
@@ -37,7 +35,7 @@ class SignupUsersController < ApplicationController
   end
 
   def complete
-    redirect_to users_path
+    sign_in User.find(session[:id]) unless user_signed_in?
   end
 
   private
