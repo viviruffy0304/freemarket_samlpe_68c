@@ -30,15 +30,6 @@ Rails.application.routes.draw do
     end
   end
 
-  
-
-  #resources :signup_users, only: [:index] do
-    #collection do
-      #get :done
-      #get :address
-    #end
-  #end
-
   resources :cards , only: [:new, :index, :create]
 
 end
