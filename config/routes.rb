@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root to: "signup_users#index"
@@ -6,11 +7,9 @@ Rails.application.routes.draw do
   resources :informations, only: [:index , :show]
   resources :tests, only: :show do
     collection do
-      get :pay
       get :done
     end
   end 
-  resources :signup_users, only: :new 
   resources :users, only: :index do
     collection do
       get :logout
@@ -19,10 +18,12 @@ Rails.application.routes.draw do
   end 
 
   resources :signin_users, only: [:show]
-  resources :signup_users, only: [:index] do
+  resources :signup_users, only: [:index, :new] do
     collection do
       get :done
       get :address
     end
   end
+
+  resources :cards , only: [:new, :index, :create]
 end
