@@ -19,7 +19,10 @@ class User < ApplicationRecord
   validates :f_first_name,   presence: true, length: { maximum: 35 }, format: { with: VALID_KATAKANA_REGEX, message: 'はカタカナで入力して下さい'}
   validates :f_last_name,    presence: true, length: { maximum: 35 }, format: { with: VALID_KATAKANA_REGEX, message: 'はカタカナで入力して下さい'}
 
-
+  has_many :cards
   has_one :address
   accepts_nested_attributes_for :address
+
+         :recoverable, :rememberable, :validatable
+
 end

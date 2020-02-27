@@ -63,8 +63,9 @@
       .mains__main__item1
         .mains__main__item1__e
           %p 
-          %button{onclick: "location.href='./done.html'", class: "main-item_e_btn"}
-            購入する
+          = form_with url: done_tests_path do
+            :plain
+            %script{type: "text/javascript", src: "https://checkout.pay.jp", class:"payjp-button", "data-text": "購入する", "data-key": "pk_test_0b178b2dc43956d9e15a85ab"}
 
     .mains__footer
       %ul.mains__footer__content
