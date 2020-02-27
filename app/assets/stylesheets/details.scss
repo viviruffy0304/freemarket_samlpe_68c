@@ -40,6 +40,21 @@
         background-color: #fff;
         padding: 24px 40px 40px;
         margin-bottom: 20px;
+        .page_manage{
+          display: flex;
+          .edit
+            a {
+              padding-left: 10px;
+              color: #3CCACE;
+              text-decoration: none;
+            }
+          .delete
+            a {
+              padding-left: 10px;
+              color: #3CCACE;
+              text-decoration: none;
+            }
+        }
         .itemBox__name {
           text-align: center;
           font-weight: bold;

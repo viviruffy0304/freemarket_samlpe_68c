@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-
-  root to: "users#index"
+   root to: "informations#show"
+#  root to: "users#index"
   resources :informations, only: [:index , :show]
   resources :tests, only: :show
   resources :signup_users, only: :new 
