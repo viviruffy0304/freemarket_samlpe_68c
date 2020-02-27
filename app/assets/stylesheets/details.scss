@@ -39,6 +39,7 @@
       .topContent .itemBox {
         background-color: #fff;
         padding: 24px 40px 40px;
+        margin-bottom: 20px;
         .itemBox__name {
           text-align: center;
           font-weight: bold;
@@ -135,69 +136,9 @@
             }
           }
         }
-        .optionalArea {
-          display: flex;
-          justify-content: space-between;
-          ul {
-            margin: 10px 0 0;
-            display: flex;
-            li.likeBtn {
-              margin-right: auto;
-              padding: 6px 10px;
-              border-radius: 40px;
-              color: #3CCACE;
-              border: 1px solid #ffb340;
-              list-style: none;
-            }
-          }
-          ul {
-            margin: 10px 0 0;
-            display: flex;
-            li.optionalBtn {
-              font-size: 14px;
-              list-style: none;
-              a {
-                padding: 6px 10px;
-                display: inline-block;
-                border-radius: 4px;
-                color: #333;
-                border: 1px solid #333;
-                text-decoration: none;
-              }
-            }
-          }
-        }
+
       }
-      .commentBox {
-        padding: 24px;
-        background-color: #fff;
-        margin: 10px 0;
-        text-align: center;
-        .new_comment {
-          textarea {
-            width: 100%;
-            min-height: 104px;
-            padding: 0px;
-          }
-        }
-        .noticeMsg {
-          padding: 8px;
-          font-size: 14px;
-          background-color: #f8f8f8;
-          margin: 10px 0;
-          text-align: left;
-        }
-        .commentBtn {
-          font-size: 18px;
-          line-height: 48px;
-          background: #3CCACE;
-          border: 1px solid #3CCACE;
-          color: #fff;
-          width: 60%;
-          font-size: 18px;
-          border-radius: 100px;
-        }
-      }
+
       .links {
         padding-bottom: 10px;
         li {
