@@ -2,11 +2,17 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   devise_for :users
 
-  root to: "informations#index"
 
-  resources :products, only: [:index]
+  root to: "signup_users#index"
+  resources :products, only: [:index, :new]
   resources :informations, only: [:index , :show]
-  resources :tests, only: :show
+  resources :tests, only: :show do
+    collection do
+      get :pay
+      get :done
+    end
+  end 
+
   resources :users, only: :index do
     collection do
       get :logout

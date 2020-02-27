@@ -213,7 +213,7 @@
                 「次へ進む」のボタンを押すことにより、
                 %a{href: "/jp/tos_list/", target: "_blank"}> 利用規約
                 に同意したものとみなします
-            %button.btn-default.btn{type: "submit"} 次へ進む
+            %button.btn-default.btn{onclick: "location.href='./address.html'",type: "submit"} 次へ進む
             .form-group.text-right
               %p
                 %a{href: "/jp/help_center/article/423/", target: "_blank"}
@@ -226,18 +226,18 @@
                 and
                 %a{href: "https://policies.google.com/terms", target: "_blank"} Terms of Service
                 apply.
-  .mains__footer
-    %ul.mains__footer__content
-      %li
-        = link_to "#" do
-          会社概要（運営会社）
-      %li
-        = link_to "#" do
-          プライバシーポリシー
-      %li
-        = link_to "#" do
-          FURIMA利用規約
-    .mains__footer__logo
-      = link_to image_tag('logo.png', class: 'logo__image'), "#"
-    %p.mains__footer__c-mark
-      © FURIMA,inc.
+    .mains__footer
+      %ul.mains__footer__content
+        %li
+          = link_to "#" do
+            会社概要（運営会社）
+        %li
+          = link_to "#" do
+            プライバシーポリシー
+        %li
+          = link_to "#" do
+            FURIMA利用規約
+      .mains__footer__logo
+        = link_to image_tag('logo.png', class: 'logo__image'), "#"
+      %p.mains__footer__c-mark
+        © FURIMA,inc.
