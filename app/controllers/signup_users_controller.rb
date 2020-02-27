@@ -2,12 +2,13 @@ class SignupUsersController < ApplicationController
   def index
   end
 
-  def done  
+  def new
   end
 
   def address
   end
 
-  def new
+  def done  
   end
+
 end
