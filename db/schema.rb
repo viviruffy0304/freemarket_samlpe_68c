@@ -9,7 +9,8 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
-ActiveRecord::Schema.define(version: 2020_02_26_013732) do
+
+ActiveRecord::Schema.define(version: 2020_02_26_065410) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
@@ -21,6 +22,15 @@ ActiveRecord::Schema.define(version: 2020_02_26_013732) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "prefectures", null: false
+  end
+
+  create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "customer_id", null: false
+    t.integer "card_number"
+    t.integer "year", null: false
+    t.integer "month", null: false
+    t.integer "security_number", null: false
   end
 
   create_table "sessions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -50,17 +60,6 @@ ActiveRecord::Schema.define(version: 2020_02_26_013732) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  end
-end
-ActiveRecord::Schema.define(version: 2020_02_26_065410) do
-
-  create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "customer_id", null: false
-    t.integer "card_number"
-    t.integer "year", null: false
-    t.integer "month", null: false
-    t.integer "security_number", null: false
   end
 
 end

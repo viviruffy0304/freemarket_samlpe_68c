@@ -27,6 +27,7 @@
         %h2 メールアドレスでログイン
 
       .logins__row__container__form
+
         = form_with(url: user_session_path, local: true, method: :post) do |f|
           .form-field
             .form-field__input
