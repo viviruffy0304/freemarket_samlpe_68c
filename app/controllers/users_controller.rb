@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
+
   def index
+
   end
 
   def logout
@@ -7,4 +9,5 @@ class UsersController < ApplicationController
 
   def howToPay
   end
+  
 end

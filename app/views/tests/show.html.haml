@@ -28,14 +28,6 @@
                 .buy-price__pay
                   %span.buy-price__pay__amount
                     ¥2,180
-
-            %ul.mains__main__item1__b__buy__acordion
-              %li.buy-price-row
-                .checkbox-default
-                  %span{id: "checkbox-wrapper"}
-                    %input{type: "checkbox", id: "check1"} 
-                    %label ポイントを使用 (所持ポイント: P0)
-
       .mains__main__item1
         .mains__main__item1__c
           = form_with( url: "", local: true, method: :post, class: "main-item1__c__buy" ) do |f|
@@ -63,8 +55,9 @@
       .mains__main__item1
         .mains__main__item1__e
           %p 
-          %button{ class: "main-item_e_btn"}
-            購入する
+          = form_with url: done_tests_path do
+            :plain
+            %script{type: "text/javascript", src: "https://checkout.pay.jp", class:"payjp-button", "data-text": "購入する", "data-key": "pk_test_0b178b2dc43956d9e15a85ab"}
 
     .mains__footer
       %ul.mains__footer__content
@@ -81,24 +74,3 @@
         = link_to image_tag('logo.png', class: 'logo__image'), "#"
       %p.mains__footer__c-mark
         © FURIMA,inc.
-
-
-<<<<<<< HEAD
-
-=======
-        .mains__footer
-            %ul.mains__footer__content
-                %li
-                    = link_to "#" do
-                        会社概要（運営会社）
-                %li
-                    = link_to "#" do
-                        プライバシーポリシー
-                %li
-                    = link_to "#" do
-                        FURIMA利用規約
-            .mains__footer__logo
-                = link_to image_tag('logo.png', class: 'logo__image'), "#"
-            %p.mains__footer__c-mark
-                © FURIMA,inc.
->>>>>>> be57292f5397cb724ca7e45984e15c54f91c37a5
