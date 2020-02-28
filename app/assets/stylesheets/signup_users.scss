@@ -268,6 +268,7 @@
     .l-single-content {
       max-width: 400px;
       margin: 0 auto;
+      text-align: left;
       .form-group {
         margin: 32px;
         label {
@@ -306,12 +307,17 @@
           }
           span {
             margin-top: 20px;
+            font-size: 14px;
           }
         }
       }
       .form-info-text{
-        padding-top: 20px;
-        text-align: center;
+        font-size: 14px;
+        padding-top: 10px;
+      }
+      .text-left.l-chapter-sub-head{
+        font-size: 16px;
+        padding-bottom: 10px;
       }
       .btn-default.btn{
         background-color: #3CCACE;
@@ -320,7 +326,7 @@
         height: 50px;
         text-align: center;
         cursor: pointer;
-        margin-top: 10px;
+        margin-top: 20px;
         a {
           text-decoration: none;
           color: #fff;
@@ -328,7 +334,8 @@
       }
       .form-group.text-right{
         a {
-          padding-left: 60px;
+          padding-left: 80px;
+          font-size: 16px;
         }
       }
       .form-group.recaptcha_term{
