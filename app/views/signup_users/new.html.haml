@@ -4,9 +4,8 @@
       =link_to image_tag('logo.png', class: 'single--header--image'), "/informations"
     %main.single-main
       %section.l-single-container
-        %h2.l-single-head.registration 会員情報入力
-        %form#register-form.l-single-inner.registration-form{action: "https://www.mercari.com/jp/signup/sms_confirmation/", method: "POST", novalidate: "novalidate"}
-          %input{name: "__csrf_value", type: "hidden", value: "778c1c832eb730a7d8a7a1f44641a70b6008322ab7054800a6848cf183ab8bbed5cbcf1c08dafaa8fc2482e8558c54cb419ecba7b7a4765b22eeba0e16d4ba9c5"}
+        %h2.l-single-head.registration
+          会員情報入力
           .l-single-content
             .form-group
               %label{for: "nickname"} ニックネーム
@@ -21,15 +20,12 @@
               %label{for: "password"} パスワード
               %span.form-require 必須
               %input.input-default{name: "password", placeholder: "7文字以上の半角英数字", type: "password"}
+            .form-group.form-password-confirm
+              %label{for: "password"} パスワード ( 確認 )
+              %span.form-require 必須
+              %input.input-default{name: "password", placeholder: "7文字以上の半角英数字", type: "password"}
               %p.form-info-text
                 ※ 英字と数字の両方を含めて設定してください
-              .form-password-revelation-toggle
-                .checkbox-default
-                  %input#reveal_password{type: "checkbox"}
-                  %i.icon-check
-                  %label{for: "reveal_password"} パスワードを表示する
-                .form-password-revelation-revealed-password-container
-                  %span.form-password-revelation-revealed-password
             .form-group
               %h3.text-left.l-chapter-sub-head 本人確認
               %p.l-single-text
@@ -213,7 +209,8 @@
                 「次へ進む」のボタンを押すことにより、
                 %a{href: "/jp/tos_list/", target: "_blank"}> 利用規約
                 に同意したものとみなします
-            %button.btn-default.btn{onclick: "location.href='./address.html'",type: "submit"} 次へ進む
+                %button.btn-default.btn{type: "submit"}
+                  %a{href: "/signup_users/address"} 次へ進む
             .form-group.text-right
               %p
                 %a{href: "/jp/help_center/article/423/", target: "_blank"}

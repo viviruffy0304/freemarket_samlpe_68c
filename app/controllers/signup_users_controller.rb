@@ -55,7 +55,5 @@ class SignupUsersController < ApplicationController
       address_attributes: [:id, :phone_number, :postal_code, :prefectures, :municipalities, :address, :building]
     )
   end
-
-
-  
 end
+
