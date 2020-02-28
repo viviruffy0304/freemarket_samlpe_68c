@@ -1,8 +1,11 @@
 class TestsController < ApplicationController
+
+  require 'payjp'
+  
   def show
   end
 
-  require 'payjp'
+  
 
   def done
     Payjp.api_key = "sk_test_9c5b009b4c2db8f24416cfd2"
