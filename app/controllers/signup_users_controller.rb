@@ -56,3 +56,4 @@ class SignupUsersController < ApplicationController
     )
   end
 end
+
