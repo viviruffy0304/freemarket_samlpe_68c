@@ -55,7 +55,6 @@
                   %i.icon-arrow-bottom
                   = f.select :birthday_year,["--"], {} ,{class: "birthday-year-select", id: "year"}
                 %span 年
-
                 .select-wrap.select-wrap__month
                   %i.icon-arrow-bottom
                   = f.select :birthday_month, ["--"], {},{class: "birthday-month-select", id:"month"}                   
@@ -108,56 +107,3 @@
         = link_to image_tag('logo.png', class: 'logo__image'), "#"
       %p.mains__footer__c-mark
         © FURIMA,inc.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
--# = form_for @user, url: step2_signup_users_path do|f|
-  
--#   .user-nickname
--#     = f.label :nickname, "ニックネーム"
--#     = f.text_field :nickname
--#   .user-email
--#     = f.label :email, "メールアドレス"
--#     = f.text_field :email
-  
--#   .user-password
--#     = f.label :password, "パスワード"
--#     = f.password_field :password
-
--#     = f.label :password, "パスワード(確認)"
--#     = f.password_field :password_confirmation
-
--#   .user-name                                                                                                                                                                                          
--#     = f.label :first_name, "名前(全角)"
--#     = f.text_field :first_name
--#     = f.text_field :last_name
-  
--#   .user-kana-name
--#     = f.label :f_first_name, "お名前カナ(全角)"
--#     = f.text_field :f_first_name
--#     = f.text_field :f_last_name
-  
--#   .user-birthday
--#     = f.label :birthday, "生年月日" 
--#     = f.select :birthday_year,["--"], {},{class: "birthday-year-select", id:"year"}
--#     年
--#     = f.select :birthday_month, ["--"], {},{class: "birthday-month-select", id:"month"}
--#     月
--#     = f.select :birthday_day, ["--"], {},{class: "birthday-day-select", id:"day"}
--#     日
-   
--#   = f.submit '次へ進む'                                                                                                                                                          
