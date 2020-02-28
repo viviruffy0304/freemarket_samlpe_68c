@@ -27,7 +27,8 @@
         %h2 メールアドレスでログイン
 
       .logins__row__container__form
-        = form_with(url: "#", local: true, method: :post) do |f|
+
+        = form_with(url: user_session_path, local: true, method: :post) do |f|
           .form-field
             .form-field__input
               = f.email_field :email, autofocus: true, placeholder: "メールアドレス"
@@ -45,7 +46,7 @@
   .logins__row__registation
     .logins__row__registation__text
       %h2 フリマに未登録の方は
-      = link_to "" do
+      = link_to "/signup_users" do
         %button 
           登録する
   

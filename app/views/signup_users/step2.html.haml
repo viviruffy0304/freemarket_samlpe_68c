@@ -1,0 +1,22 @@
+= form_for @user, url: signup_users_path, method: :post do |f|
+  = f.fields_for :address do |p|
+
+    = p.label :postal_code, "郵便番号"
+    = p.text_field :postal_code
+
+    = p.label :prefectures, "都道府県"
+    = p.select :prefectures, Address.prefectures.keys, {prompt: "選択してください"}, class: "form-controll"
+    
+    = p.label :municipalities, "市区町村"
+    = p.text_field :municipalities
+
+    = p.label :address, "番地"
+    = p.text_field :address
+
+    = p.label :building, "建物名"
+    = p.text_field :building
+
+    = p.label :phone_number, "電話番号"
+    = p.text_field :phone_number
+
+  = f.submit '登録を完了する'
