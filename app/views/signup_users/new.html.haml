@@ -5,7 +5,7 @@
     %main.single-main
       %section.l-single-container
         %h2.l-single-head.registration 会員情報入力
-        %form#register-form.l-single-inner.registration-form{action: "https://www.mercari.com/jp/signup/sms_confirmation/", method: "POST", novalidate: "novalidate"}
+        %form#register-form.l-single-inner.registration-form{action: step2_signup_users_path, method: "POST", novalidate: "novalidate"}
           %input{name: "__csrf_value", type: "hidden", value: "778c1c832eb730a7d8a7a1f44641a70b6008322ab7054800a6848cf183ab8bbed5cbcf1c08dafaa8fc2482e8558c54cb419ecba7b7a4765b22eeba0e16d4ba9c5"}
           .l-single-content
             .form-group
