@@ -31,33 +31,21 @@
 ### Association
 - belongs_to :user
 
-## creditsテーブル
+## cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|foreign_key :true|
-|card_number|integer||
-|year|integer|null: false|
-|month|integer|null: false|
-|security_number|integer|null: false|
+|customer_id|interger|null: false|
+|card_number|integer|null: false|
 ### Association
 - belongs_to :user
 
-
-## searchesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|category_id|integer|foreign_key :true|
-|brand_id|integer|foreign_key :true|
-### Association
-- belongs_to :category
-- belongs_to :brand
 
 ## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null :false|
 ### Association
-- has_many :searches
 - has_many :items
 
 ## brandsテーブル
@@ -65,13 +53,14 @@
 |------|----|-------|
 |name|string|null :false|
 ### Association
-- has_many :searches
 - has_many :items
 
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|foreign_key :true|
+|seller_id|integer|:::|
+|buyer_id|integer|:::|
 |brand_id|integer|foreign_key :true|
 |category_id|integer|foreign_key :true|
 |name|string|null: false|
@@ -81,9 +70,16 @@
 |region|string|null: false|
 |shipping-days|string|null: false|
 |price|interger|null: false|
-|image|text|unique: true|
 ### Association
 - belongs_to :user
 - belongs_to :category
 - belongs_to :brand
 - has_many :images
+
+## imagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|item_id|integer||foreign_key :true|
+|image|text|unique: true|
+### Association
+- belongs_to :item
