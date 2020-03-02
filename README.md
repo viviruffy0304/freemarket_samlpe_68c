@@ -81,16 +81,9 @@
 |region|string|null: false|
 |shipping-days|string|null: false|
 |price|interger|null: false|
+|image|text|unique: true|
 ### Association
 - belongs_to :user
 - belongs_to :category
 - belongs_to :brand
 - has_many :images
-
-## imagesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|item_id|integer||foreign_key :true|
-|image|text|unique: true|
-### Association
-- belongs_to :item
