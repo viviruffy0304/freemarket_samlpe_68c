@@ -26,17 +26,11 @@ ActiveRecord::Schema.define(version: 2020_02_28_081003) do
 
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id", null: false
+    t.integer "customer_id", null: false
     t.integer "card_number"
     t.integer "year", null: false
     t.integer "month", null: false
     t.integer "security_number", null: false
-  end
-
-  create_table "categories", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", limit: 25
-    t.integer "id"
-    t.string "ancestry"
-    t.index ["ancestry"], name: "index_categories_on_ancestry"
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
