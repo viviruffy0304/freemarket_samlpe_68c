@@ -3,6 +3,7 @@
   padding: 0 60px;
   font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
 
+
   .headerInner{
     // background-color: blue;
     max-width: 1040px;
@@ -90,178 +91,13 @@
         }
 
         .listsLeft__item--first{
+          text-decoration: none;
           padding: 0 30px 0 0;
-          ul.menu__first-level {
-            list-style-type: none;
-            li {
-              &:hover {
-                ul {
-                  li {
-                    display: block;
-                    height: 40px;
-                    width: 200px;
-                    text-align: left;
-                    padding-left: 10px;
-                  }
-                }
-              }
-              ul {
-                position: absolute;
-                top: 10px;
-                z-index: 1000;
-                li {
-                  height: 0;
-                  display: none;
-                }
-              }
-            }
-            ul.menu__second-level {
-              background-color: #fff;
-              list-style-type: none;
-              position: absolute;
-              margin-top: 20px;
-              margin-left: -20px;
-              border: solid 1px #f8f8f8;
-              li {
-                position: relative;
-                &:hover {
-                  ul {
-                    li {
-                      display: block;
-                      height: 40px;
-                      width: 200px;
-                      text-align: left;
-                    }
-                  }
-                }
-                ul {
-                  top: 44px;
-                  z-index: 1000;
-                  li {
-                    height: 0;
-                    display: none;
-                  }
-                }
-              }
-              ul.menu__third-level {
-                background-color: #fff;
-                list-style-type: none;
-                position: absolute;
-                margin-top: -45px;
-                margin-left: 200px;
-                border: solid 1px #f8f8f8;
-                li {
-                  position: relative;
-                  &:hover {
-                    ul {
-                      li {
-                        display: block;
-                        height: 40px;
-                        width: 200px;
-                        text-align: left;
-                      }
-                    }
-                  }
-                  ul {
-                    position: absolute;
-                    top: 44px;
-                    z-index: 1000;
-                    li {
-                      height: 0;
-                      display: none;
-                    }
-                  }
-                }
-                ul.menu__fourth-level {
-                  background-color: #fff;
-                  list-style-type: none;
-                  position: absolute;
-                  margin-top: -45px;
-                  margin-left: 200px;
-                  border: solid 1px #f8f8f8;
-                  li {
-                    position: relative;
-                    &:hover {
-                      ul {
-                        li {
-                          display: block;
-                          height: 40px;
-                          width: 200px;
-                          text-align: left;
-                        }
-                      }
-                    }
-                    ul {
-                      position: absolute;
-                      top: 44px;
-                      z-index: 1000;
-                      li {
-                        height: 0;
-                        display: none;
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
+          
         }
-        .listsLeft__item--second{
-          padding: 0 30px 0 0;
-          ul.menu__first-level {
-            list-style-type: none;
-            li {
-              &:hover {
-                ul {
-                  li {
-                    display: block;
-                    height: 40px;
-                    width: 200px;
-                    text-align: left;
-                    padding-left: 10px;
-                  }
-                }
-              }
-              ul {
-                position: absolute;
-                top: 10px;
-                z-index: 1000;
-                li {
-                  height: 0;
-                  display: none;
-                }
-              }
-            }
-            ul.menu__second-level {
-              background-color: #fff;
-              list-style-type: none;
-              position: absolute;
-              margin-top: 20px;
-              margin-left: -20px;
-              border: solid 1px #f8f8f8;
-              li {
-                position: relative;
-                &:hover {
-                  ul {
-                    li {
-                      display: block;
-                      height: 40px;
-                      width: 200px;
-                      text-align: left;
-                    }
-                  }
-                }
-                ul {
-                  top: 44px;
-                  z-index: 1000;
-                  li {
-                    height: 0;
-                    display: none;
-                  }
-                }
-              }
-            }
-          }
+        .listsRight__item--first{
+          padding: 0 16px 0 0;
+          
         }
       }
       .listsRight{
@@ -269,23 +105,21 @@
         margin-left: auto;
         display: flex;
         height: 32px;
-        .listsRight__item--first{
-          padding: 0 16px 0 0;
-        }
+
         a{
           text-decoration: none;
           color: rgb(88, 88, 88);
         }
-<<<<<<< HEAD
+        .listsRight__item--login{
+          
         }
-=======
->>>>>>> dropdown0302
         .listsRight__item--new{
           padding-left: 16px;
         }
       }
     }
   }
+}
 
 .main{
 
@@ -644,6 +478,10 @@
           }
           a{
             text-decoration: none;
+            
+            .image{
+
+            }
             .product__info{
               color: #333;
               padding: 16px;
@@ -655,10 +493,10 @@
                 display: flex;
                 list-style: none;
                 text-decoration: none;
-<<<<<<< HEAD
-=======
 
->>>>>>> dropdown0302
+                .price{
+
+                }
                 .like{
                   margin-left: auto;
                   .fa-star{
