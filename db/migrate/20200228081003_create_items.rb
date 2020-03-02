@@ -9,7 +9,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string :name, null: false
       t.text :description, null: false
       t.text :state, null: false
-      t.string :postaget, null: false
+      t.string :postage, null: false
       t.string :region, null: false
       t.string :shipping_days, null: false
       t.integer :price, null: false
