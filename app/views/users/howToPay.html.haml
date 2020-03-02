@@ -1,8 +1,8 @@
 .wrapper
-  = render partial: "/sha/header"
+  = render partial: "/shared/header"
   .main_background
     .l_container
-      = render partial: "/sha/nav_side"
+      = render partial: "/shared/nav_side"
       .credit_registration_container
         %h2.subtitleBox
           支払い方法
@@ -10,11 +10,11 @@
           .text
             クレジットカード一覧
           .darkSkyblue_btn
-            = link_to "#", class: "blue_btn" do
+            = link_to "/cards", class: "blue_btn" do
               %i.fas.fa-credit-card
               クレジットカードを追加する
         .how_to_payBox
           = link_to "#", class: "pay_link" do
             支払い方法について
             %i.fas.fa-chevron-right
-  = render partial: "/sha/footer"
+  = render partial: "/shared/footer"

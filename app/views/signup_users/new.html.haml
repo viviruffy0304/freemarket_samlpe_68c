@@ -1,18 +1,11 @@
 %body
-  / Google Tag Manager (noscript)
-  %noscript
-    %iframe{height: "0", src: "https://www.googletagmanager.com/ns.html?id=GTM-KLPT5L5", style: "display:none;visibility:hidden", width: "0"}
-  / End Google Tag Manager (noscript)
   .single-container
-    %header.single-header
-      %h1
-        =image_tag "http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg"
-        %nav.progress-bar.signup-bar
+    .single-container--header
+      =link_to image_tag('logo.png', class: 'single--header--image'), "/informations"
     %main.single-main
       %section.l-single-container
-        %h2.l-single-head.registration 会員情報入力
-        %form#register-form.l-single-inner.registration-form{action: "https://www.mercari.com/jp/signup/sms_confirmation/", method: "POST", novalidate: "novalidate"}
-          %input{name: "__csrf_value", type: "hidden", value: "778c1c832eb730a7d8a7a1f44641a70b6008322ab7054800a6848cf183ab8bbed5cbcf1c08dafaa8fc2482e8558c54cb419ecba7b7a4765b22eeba0e16d4ba9c5"}
+        %h2.l-single-head.registration
+          会員情報入力
           .l-single-content
             .form-group
               %label{for: "nickname"} ニックネーム
@@ -27,15 +20,12 @@
               %label{for: "password"} パスワード
               %span.form-require 必須
               %input.input-default{name: "password", placeholder: "7文字以上の半角英数字", type: "password"}
+            .form-group.form-password-confirm
+              %label{for: "password"} パスワード ( 確認 )
+              %span.form-require 必須
+              %input.input-default{name: "password", placeholder: "7文字以上の半角英数字", type: "password"}
               %p.form-info-text
                 ※ 英字と数字の両方を含めて設定してください
-              .form-password-revelation-toggle
-                .checkbox-default
-                  %input#reveal_password{type: "checkbox"}
-                  %i.icon-check
-                  %label{for: "reveal_password"} パスワードを表示する
-                .form-password-revelation-revealed-password-container
-                  %span.form-password-revelation-revealed-password
             .form-group
               %h3.text-left.l-chapter-sub-head 本人確認
               %p.l-single-text
@@ -219,7 +209,8 @@
                 「次へ進む」のボタンを押すことにより、
                 %a{href: "/jp/tos_list/", target: "_blank"}> 利用規約
                 に同意したものとみなします
-            %button.btn-default.btn{type: "submit"} 次へ進む
+                %button.btn-default.btn{type: "submit"}
+                  %a{href: "/signup_users/address"} 次へ進む
             .form-group.text-right
               %p
                 %a{href: "/jp/help_center/article/423/", target: "_blank"}
@@ -232,12 +223,8 @@
                 and
                 %a{href: "https://policies.google.com/terms", target: "_blank"} Terms of Service
                 apply.
-.footer
-  %ul.contentsBox
-    %li.contents
-      %h2.contents__head
-        FURIMAについて
-      %ul.content
+    .mains__footer
+      %ul.mains__footer__content
         %li
           = link_to "#" do
             会社概要（運営会社）
@@ -247,36 +234,7 @@
         %li
           = link_to "#" do
             FURIMA利用規約
-        %li
-          = link_to "#" do
-            ポイントに関する特約
-    %li.contents
-      %h2.contents__head
-        FURIMAを見る
-      %ul.content
-        %li
-          = link_to "#" do
-            カテゴリー一覧
-        %li
-          = link_to "#" do
-            ブランド一覧
-
-    %li.contents
-      %h2.contents__head
-        ヘルプ&ガイド
-      %ul.content
-        %li
-          = link_to "#" do
-            FURIMAガイド
-        %li
-          = link_to "#" do
-            FURIMAロゴ利用ガイドライン
-        %li
-          = link_to "#" do
-            お知らせ
-
-  .footer__logo
-    = link_to image_tag('logo-white', class: 'logo__image'), "#"
-  %p.c_mark
-    © FURIMA
-    
+      .mains__footer__logo
+        = link_to image_tag('logo.png', class: 'logo__image'), "#"
+      %p.mains__footer__c-mark
+        © FURIMA,inc.
