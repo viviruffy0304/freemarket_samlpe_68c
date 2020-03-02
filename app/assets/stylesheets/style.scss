@@ -642,6 +642,10 @@
           }
           a{
             text-decoration: none;
+            
+            .image{
+
+            }
             .product__info{
               color: #333;
               padding: 16px;
@@ -654,6 +658,9 @@
                 list-style: none;
                 text-decoration: none;
 
+                .price{
+
+                }
                 .like{
                   margin-left: auto;
                   .fa-star{
