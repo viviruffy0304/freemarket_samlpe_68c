@@ -30,7 +30,7 @@
             .edit
               =link_to "編集" 
             .delete
-              =link_to "削除" 
+              =link_to "削除" ,information_path, method: :delete, class: 'btn'
               
           %h2.itemBox__name product1
           .itemBox__body
