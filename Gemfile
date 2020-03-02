@@ -80,8 +80,12 @@ gem 'mini_magick'
 gem 'haml-rails'
 gem 'font-awesome-rails'
 
+<<<<<<< HEAD
 gem 'devise'
 gem 'activerecord-session_store'
 gem 'jquery-rails'
 gem 'payjp'
 
+=======
+gem 'ancestry'
+>>>>>>> dropdown0302

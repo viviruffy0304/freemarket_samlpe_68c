@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2020_02_28_081003) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -31,6 +32,9 @@ ActiveRecord::Schema.define(version: 2020_02_28_081003) do
     t.integer "month", null: false
     t.integer "security_number", null: false
   end
+=======
+ActiveRecord::Schema.define(version: 2020_02_24_113232) do
+>>>>>>> dropdown0302
 
   create_table "categories", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", limit: 25
@@ -39,6 +43,7 @@ ActiveRecord::Schema.define(version: 2020_02_28_081003) do
     t.index ["ancestry"], name: "index_categories_on_ancestry"
   end
 
+<<<<<<< HEAD
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
     t.integer "seller_id"
@@ -83,6 +88,19 @@ ActiveRecord::Schema.define(version: 2020_02_28_081003) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+=======
+  create_table "items", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "brand_id"
+    t.integer "category_id"
+    t.string "name", limit: 25
+    t.integer "price"
+    t.string "description"
+    t.string "state"
+    t.string "postage", limit: 25
+    t.string "reigion"
+    t.string "shipping_days", limit: 25
+>>>>>>> dropdown0302
   end
 
 end

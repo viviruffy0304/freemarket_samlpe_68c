@@ -31,7 +31,7 @@
 ### Association
 - belongs_to :user
 
-## creditsテーブル
+## cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|foreign_key :true|
@@ -59,6 +59,7 @@
 ### Association
 - has_many :searches
 - has_many :items
+- has_ancestry
 
 ## brandsテーブル
 |Column|Type|Options|
@@ -79,7 +80,7 @@
 |state|text|null: false|
 |postage|string|null: false|
 |region|string|null: false|
-|shipping-days|string|null: false|
+|shipping_days|string|null: false|
 |price|interger|null: false|
 ### Association
 - belongs_to :user

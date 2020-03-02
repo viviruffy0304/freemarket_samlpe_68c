@@ -10,12 +10,31 @@
             = button_tag type: :submit, class: "submit-btn" do
               = image_tag("icon-search-1.png", width: '20px', height: '20px', class: "search-icon")
     .nav
-      %ul.listsLeft
-        %li.listsLeft__item.listsLeft__item--first
-          = link_to "カテゴリー", "#", id: "catBtn"
-        %li.listsLeft__item.listsRight__item--first
-          = link_to "ブランド", "#", id: "brandBtn"
-      %ul.listsRight
+      .listsLeft
+        .listsLeft__item--first
+          %ul.menu__first-level
+            %li
+              = link_to "カテゴリー", "#", id: "brandBtn"
+              %ul.menu__second-level
+                %li
+                  %a.init-right
+                    = link_to"Child Menu", "#", id: "#"
+                  %ul.menu__third-level
+                    %li
+                      %a.init-right
+                        = link_to"Grandchild Menu", "#", id: "#"
+                      %ul.menu__fourth-level
+                        %li
+                          = link_to"Great-grandchild Menu", "#", id: "#"
+        .listsLeft__item--second
+          %ul.menu__first-level
+            %li
+              = link_to "ブランド", "#", id: "brandBtn"
+              %ul.menu__second-level
+                %li
+                  %a.init-right
+                    = link_to"Child Menu", "#", id: "#"
+      .listsRight
         %li.listsRight__item.listsRight__item--login
           = link_to "ログイン", "/signin_users/show"
         %li.listsRight__item.listsRight__item--new
