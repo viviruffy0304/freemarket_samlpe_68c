@@ -4,8 +4,8 @@ Rails.application.routes.draw do
 
 
   root to: "signup_users#index"
-  resources :products, only: [:index, :new]
-  resources :informations, only: [:index , :show]
+  resources :products, only: [:index, :new, :edit, ]
+  resources :informations, only: [:index , :show ]
   resources :tests, only: :show do
     collection do
       get :done
