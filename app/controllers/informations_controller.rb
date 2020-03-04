@@ -1,6 +1,6 @@
 class InformationsController < ApplicationController
   def index
-    @items = Item.all
+    @items = Item.limit(3).order('created_at DESC')
   end
 
   def show
