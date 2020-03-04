@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 
-  root to: "signup_users#index"
+  root to: "items#new"
   resources :products, only: [:index, :new]
   resources :informations, only: [:index , :show]
   resources :tests, only: :show do
@@ -30,5 +30,6 @@ Rails.application.routes.draw do
   end
 
   resources :cards , only: [:new, :index, :create]
+  resources :items, only: [:index, :new, :create]
 
 end
