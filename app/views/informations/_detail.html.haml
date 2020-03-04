@@ -25,12 +25,7 @@
     .contentRight
       .topContent
         .itemBox
-          .page_manage
-            この商品ページを
-            .edit
-              =link_to "編集" 
-            .delete
-              =link_to "削除" 
+          
               
           %h2.itemBox__name product1
           .itemBox__body
@@ -79,13 +74,13 @@
 
           .page_manage
             .seller_btn
-            - if user_signed_in? && current_seller.id == @item.seller_id
+
               %a.item-edit-btn{href: "#"}
                 編集画面に進む
               %a.item-delete-btn{href: "#"}
-                削除画面に進む
+                削除する
             .buyer_btn
-            - if user_signed_in? && current_user.id == @post.user_id
+
               %a.item-buy-btn{href: "#"}
                 購入画面に進む
 
