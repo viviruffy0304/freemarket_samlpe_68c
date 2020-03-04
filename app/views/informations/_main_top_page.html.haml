@@ -109,11 +109,11 @@
                 %h3.name
                   = item.name 
                 .product__info__image
-                  -# = image_tag item.images.first.image1.url, resize: '188x188'
-                  -# -if item.buyer_id.present? 
-                  -#   .items-box_photo__sold
-                  -#     .items-box_photo__sold__inner
-                  -#       SOLD
+                  = image_tag(item.images.first.image.url, resize: '188x188')
+                  -if item.buyer_id.present? 
+                    .items-box_photo__sold
+                      .items-box_photo__sold__inner
+                        SOLD
                 %ul.details
                   %li.price
                     %p
