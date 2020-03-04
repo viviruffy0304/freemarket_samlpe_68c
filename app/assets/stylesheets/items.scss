@@ -179,6 +179,24 @@
         margin-left: auto;
       }
     }
+    .sellBtn{
+      width: 350px;
+      height: 45px;
+      display: block;
+      text-align: center;
+      margin: 25px auto;
+      background-color: rgb(1, 218, 199);
+      border-radius: 5px;
+      transition: 0.4s;
+      font-size: 18px;
+      border: 0;
+      font-weight: bold;
+      color: #eee;
+      &:hover{
+        transition: 0.2s;
+        background-color: rgb(0, 185, 170);
+      }
+    }
     .item_sellBox{
       width: 350px;
       height: 45px;

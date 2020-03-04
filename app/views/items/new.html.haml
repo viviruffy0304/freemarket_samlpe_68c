@@ -6,7 +6,7 @@
       .product_information_container
       
         -# productImageBoxだが、使い回す
-        = fields_for :images, @item do |image|
+        = form.fields_for :images do |image|
           .product_Box
             .topBox
               .leftBox
@@ -14,14 +14,11 @@
               .rightBox
                 必須
             #image_upload_text.text
-              最大1枚までアップロードできます
-              = form.label '最大10枚までアップロードできます'
+              = image.label '最大10枚までアップロードできます'
             #flexBox_one_to_five.flexBox
-              = form.label :image, class: "product_default_image", id: "item_image_one_to_five" do
-                -# = image_tag(@item.images.image, class: "image_src") if @item.images.present?
+              = image.label :image, class: "product_default_image", id: "item_image_one_to_five" do
                 %i.fas.fa-camera
-                = form.file_field :image, class: "upload_image"
-                  
+                = image.file_field :image, accept: 'image/jpg,image/jpeg,image/png,image/gif', class: "upload_image"  
                 .image_text
                   クリックしてファイルをアップロード
         -# - if file.present
@@ -40,7 +37,7 @@
               商品の説明
             .rightBox
               必須
-          = form.text_area :explain_product, placeholder: "商品の説明（必須 1,000文字以内）", class: "explain_product"
+          = form.text_area :description, placeholder: "商品の説明（必須 1,000文字以内）", class: "explain_product"
       .product_information_container
         .product_text
           商品の詳細
@@ -50,21 +47,21 @@
               カテゴリー
             .rightBox
               必須
-          = form.select :product_name, [['選択してください', 1], ['レディース', 2], ['メンズ', 3], ['ベビー', 4]], {}, {class: "selectBox"}
+          = form.select :category_id, [['選択してください', 1], ['レディース', 2], ['メンズ', 3], ['ベビー', 4]], {}, {class: "selectBox"}
         .product_Box
           .topBox
             .leftBox
               ブランド
             .rightBox-n
               任意
-          = form.text_field :brand_name, placeholder: "シャネル", class: "product_name"
+          = form.text_field :brand_id, placeholder: "シャネル", class: "product_name"
         .product_Box
           .topBox
             .leftBox
               商品の状態
             .rightBox
               必須
-          = form.select :product_name, [['選択してください', 1], ['新品', 2], ['中古', 3], ['パチモン', 4]], {}, {class: "selectBox"}
+          = form.select :state, [['選択してください', 1], ['新品', 2], ['中古', 3], ['パチモン', 4]], {}, {class: "selectBox"}
       .product_information_container
         .product_text
           配送について
@@ -74,21 +71,21 @@
               配送料負担
             .rightBox
               必須
-          = form.select :product_name, [['選択してください', 1], ['送料込み', 2], ['着払い', 3]], {}, {class: "selectBox"}
+          = form.select :postage, [['選択してください', 1], ['送料込み', 2], ['着払い', 3]], {}, {class: "selectBox"}
         .product_Box
           .topBox
             .leftBox
               発送元の地域
             .rightBox
               必須
-          = form.select :product_name, [['選択してください', 1], ['北海道', 2], ['東京', 3], ['愛知', 4]], {}, {class: "selectBox"}
+          = form.select :region, [['選択してください', 1], ['北海道', 2], ['東京', 3], ['愛知', 4]], {}, {class: "selectBox"}
         .product_Box
           .topBox
             .leftBox
               発送までの日数
             .rightBox
               必須
-          = form.select :product_name, [['選択してください', 1], ['1~2日で発送', 2], ['2~3日で発送', 3], ['4~7日で発送', 4]], {}, {class: "selectBox"}
+          = form.select :shipping_days, [['選択してください', 1], ['1~2日で発送', 2], ['2~3日で発送', 3], ['4~7日で発送', 4]], {}, {class: "selectBox"}
       .product_information_container
         .product_text
           価格（¥300~9,999,999）
@@ -100,22 +97,21 @@
               必須
           .yen_text
             ¥
-          = form.number_field :priceBox, placeholder: "0", class: "priceBox", min: 0, max: 9999999
+          = form.number_field :price, placeholder: "0", class: "priceBox", min: 0, max: 9999999
         .tax_Box
           .topBox
             .lightBox
               販売手数料（10%）
           .price_text
-            ¥100
-        .number_Box
+            ¥100 
+        .number_Box#profit_Box
           .topBox
             .lightBox
               販売利益
           .price_text
             ¥900
-        .item_sellBox
-          = link_to "#", class: "sellBtn" do
-            出品する
+        .item_sellBox 
+          = form.submit "出品する", class: "sellBtn"
         .back_toBox
           = link_to "#", class: "backBtn" do
             もどる

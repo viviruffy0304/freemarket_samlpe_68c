@@ -1,6 +1,7 @@
 $(function(){
   // let file_field = document.querySelector('input[type=file]')
-  $('.upload_image').off('change').on('change', function(){
+  $('.upload_image').first().off('change').on('change', function(){
+    // num = $(".imageBox").length
     let files = $('input[type="file"]').prop('files')[0]
     let fileReader = new FileReader();
     fileReader.onloadend = function(){
@@ -42,15 +43,27 @@ $(function(){
     else if($(".imageBox").length == 9){
       $("#item_image_six_to_ten").css('display', 'none')
     }
+
+    // ここから画像機能編集
+    if (true) {
+      console.log("imageBoxが追加されました")
+      image_number = $(".imageBox").length + 1
+      html = 
+      `
+      <input accept="image/jpg,image/jpeg,image/png,image/gif" class="upload_image" type="file" name="item[images_attributes][${image_number}][image]" id="item_images_attributes_${image_number}_image">
+      `
+      $(".product_default_image").last().prepend(html)
+      $(".product_default_image").last().removeAttr("for")
+      $(".product_default_image").last().attr("for", `item_images_attributes_${image_number}_image`)
+    }
+    console.log("処理終了")
   })
   $(document).off('click').on('click', ".item_image_deleteBtn", function(){
     let delete_object = $(this).parent().parent()
     delete_object.remove()
     // 冗談を削除したときの処理
     if($(".imageBox").length >= 5){
-      console.log('一段階OK')
       if($("#flexBox_one_to_five").children(".imageBox").length == 4){
-        console.log("二段階OK")
         // 上段を削除した際に下段の初めから要素をとってきて移動させる
         image = $("#flexBox_six_to_ten").children(".imageBox:first").insertBefore($('#flexBox_one_to_five').children('#item_image_one_to_five'))
       }
@@ -80,8 +93,40 @@ $(function(){
       
     }
   })
-
+  $(".priceBox").off("keyup").on("keyup", function(){
+    if($(this).val() >= 300 && $(this).val() <= 9999999){
+      console.log($(this).val())
+      $('.price_text').remove()
+      a_html =
+      `
+      <div class="price_text">
+        ¥${$(this).val()*0.1}
+      </div>
+      `
+      p_html =
+      `
+      <div class="price_text">
+        ¥${$(this).val()*0.9}
+      </div>
+      `
+      $(".tax_Box").children(".topBox").after(a_html)
+      $("#profit_Box").children(".topBox").after(p_html)
+    }else{
+      $('.price_text').remove()
+      html =
+      `
+      <div class="price_text">
+        ー
+      </div>
+      `
+      $(".tax_Box").children(".topBox").after(html)
+      $("#profit_Box").children(".topBox").after(html)
+    }
+  })
   
 
 
 })
+
+
+// {<input class="upload_image" type="file" name="item[images_attributes][0][image]" id="item_images_attributes_0_image"> */}

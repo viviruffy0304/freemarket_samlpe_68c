@@ -30,6 +30,6 @@ Rails.application.routes.draw do
   end
 
   resources :cards , only: [:new, :index, :create]
-  resources :items, only: [:index, :new]
+  resources :items, only: [:index, :new, :create]
 
 end
