@@ -1,7 +1,7 @@
 .sell_container_back
   .sell_container
     .logoBox
-      = image_tag 'logo.png', class: 'logo'
+      =link_to image_tag('logo.png', class: 'logo'), "/informations"
     = form_with(model: @item, local: true) do |form|
       .product_information_container
       
