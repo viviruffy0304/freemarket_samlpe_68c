@@ -2,10 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
+  root to: "signup_users#index"
+  resources :products, only: [:index, :new, :edit, :update]
+  resources :informations, only: [:index , :show ]
 
-  root to: "items#new"
-  resources :products, only: [:index, :new]
-  resources :informations, only: [:index , :show]
   resources :tests, only: :show do
     collection do
       get :done

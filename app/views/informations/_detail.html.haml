@@ -37,14 +37,6 @@
             %ul
               %li
                 = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png'
-
-                %ul
-                  %li
-                    = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"
-                  %li
-                    = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/8/a002.png"
-                  %li
-                    = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/9/a003.png"
           .itemBox__price
             %span
               ¥10000
@@ -72,9 +64,6 @@
                   %th ブランド
                   %td
                 %tr
-                  %th 商品のサイズ
-                  %td
-                %tr
                   %th 商品の状態
                   %td 新品/未使用
                 %tr
@@ -87,6 +76,19 @@
                 %tr
                   %th 発送日の目安
                   %td 1-2日で発送
+
+          .page_manage
+            .seller_btn
+            - if user_signed_in? && current_seller.id == @item.seller_id
+              %a.item-edit-btn{href: "#"}
+                編集画面に進む
+              %a.item-delete-btn{href: "#"}
+                削除画面に進む
+            .buyer_btn
+            - if user_signed_in? && current_user.id == @post.user_id
+              %a.item-buy-btn{href: "#"}
+                購入画面に進む
+
       %ul.links
         %li
           =link_to "#" do
