@@ -1,7 +1,5 @@
 $(function(){
-
   var submit = document.getElementById("token_submit");
-
   submit.addEventListener('click', function(e){  // 追加するボタンが押されたらイベント発火
     e.preventDefault();  // ボタンを一旦無効化
     Payjp.setPublicKey("pk_test_0b178b2dc43956d9e15a85ab");

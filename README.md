@@ -35,10 +35,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|foreign_key :true|
-|card_number|integer||
-|year|integer|null: false|
-|month|integer|null: false|
-|security_number|integer|null: false|
+|customer_id|interger|null: false|
+|card_number|integer|null: false|
 ### Association
 - belongs_to :user
 
@@ -48,7 +46,6 @@
 |------|----|-------|
 |name|string|null :false|
 ### Association
-- has_many :searches
 - has_many :items
 - has_ancestry
 
@@ -57,13 +54,14 @@
 |------|----|-------|
 |name|string|null :false|
 ### Association
-- has_many :searches
 - has_many :items
 
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|foreign_key :true|
+|seller_id|integer|:::|
+|buyer_id|integer|:::|
 |brand_id|integer|foreign_key :true|
 |category_id|integer|foreign_key :true|
 |name|string|null: false|
