@@ -1,6 +1,6 @@
 class TestsController < ApplicationController
 
-  require 'payjp'
+  # require 'payjp'
   
   def show
   end

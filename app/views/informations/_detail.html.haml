@@ -17,7 +17,8 @@
     %li
       %i.fa.fa-angle-right
     %li
-      %p product1
+      %p 
+        = @item.name
 
 .main
   .showMain
@@ -32,34 +33,41 @@
             .delete
               =link_to "削除" 
               
-          %h2.itemBox__name product1
+          %h2.itemBox__name 
+            = @item.name
           .itemBox__body
             %ul
               %li
+                -# = image_tag images.image1.url
                 = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png'
 
                 %ul
                   %li
+                    -# = image_tag images.image2.url
                     = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"
                   %li
+                    -# = image_tag images.image3.url
                     = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/8/a002.png"
                   %li
+                    -# = image_tag images.image4.url
                     = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/9/a003.png"
           .itemBox__price
             %span
-              ¥10000
+              -# = item.price
             .itemBox__price-detail
               %span
                 (税込)
               %span
                 送料込み
-          .itemDetail product1
+          .itemDetail 
+            = @item.name
           .table
             %table
               %tbody
                 %tr
                   %th 出品者
-                  %td hoge
+                  %td 
+                    =link_to @item.seller.nickname
                 %tr
                   %th カテゴリー
                   %td
@@ -76,14 +84,15 @@
                   %td
                 %tr
                   %th 商品の状態
-                  %td 新品/未使用
+                  %td 
+                    =@item.state
                 %tr
                   %th 配送料の負担
                   %td 送料込み（出品者負担）
                 %tr
                   %th 発送元の地域
                   %td
-                    =link_to "青森県"
+                    =link_to @item.region
                 %tr
                   %th 発送日の目安
                   %td 1-2日で発送
