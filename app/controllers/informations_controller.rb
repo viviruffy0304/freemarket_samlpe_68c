@@ -6,6 +6,7 @@ class InformationsController < ApplicationController
   def show
   end
 
+
   private
 
   def item_params
@@ -22,4 +23,5 @@ class InformationsController < ApplicationController
       images_attributes: [:id, :image]
     ).merge(seller_id: current_user.id)
   end
+
 end
