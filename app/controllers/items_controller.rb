@@ -36,7 +36,7 @@ class ItemsController < ApplicationController
       :name, 
       :description, 
       :state, 
-      :postage, 
+      :postaget, 
       :region, 
       :shipping_days, 
       :price, 

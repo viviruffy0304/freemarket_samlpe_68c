@@ -88,14 +88,16 @@
                     =@item.state
                 %tr
                   %th 配送料の負担
-                  %td 送料込み（出品者負担）
+                  %td 
+                    =@item.postaget
                 %tr
                   %th 発送元の地域
                   %td
                     =link_to @item.region
                 %tr
                   %th 発送日の目安
-                  %td 1-2日で発送
+                  %td 
+                    = @item.shipping_days
       %ul.links
         %li
           =link_to "#" do
