@@ -18,7 +18,9 @@
           = form.label :image, class: "product_default_image" do
             %i.fas.fa-camera
             = form.file_field :image, class: "upload_image"
-              
+
+            //既に登録されたアイテム毎のイメージ画像を表示できるようにしたい
+
             .image_text
               クリックしてファイルをアップロード
         -# - if file.present
@@ -30,7 +32,7 @@
               商品名
             .rightBox
               必須
-          = form.text_field :product_name, placeholder: "40文字以内", class: "product_name"
+          = form.text_field :product_name, placeholder: "#", class: "product_name"
         .product_Box
           .topBox
             .leftBox
@@ -54,7 +56,7 @@
               ブランド
             .rightBox-n
               任意
-          = form.text_field :brand_name, placeholder: "シャネル", class: "product_name"
+          = form.text_field :brand_name, placeholder: "#", class: "product_name"
         .product_Box
           .topBox
             .leftBox
@@ -112,7 +114,7 @@
             ¥900
         .item_sellBox
           = link_to "#", class: "sellBtn" do
-            出品する
+            情報を更新して出品する
         .back_toBox
           = link_to "#", class: "backBtn" do
             もどる
