@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 2020_03_02_055722) do
     t.string "name", null: false
     t.text "description", null: false
     t.text "state", null: false
-    t.string "postage", null: false
+    t.string "postaget", null: false
     t.string "region", null: false
     t.string "shipping_days", null: false
     t.integer "price", null: false
