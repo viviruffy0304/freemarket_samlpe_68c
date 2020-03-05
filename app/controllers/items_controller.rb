@@ -18,8 +18,6 @@ class ItemsController < ApplicationController
       
       render 'index'
     else
-      # flash[:danger] = "商品登録に失敗しました"
-      # binding.pry
       render 'new'
     end
   end
