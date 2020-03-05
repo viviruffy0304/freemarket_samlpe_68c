@@ -42,24 +42,6 @@
 ### Association
 - belongs_to :user
 
-
-## categoriesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null :false|
-### Association
-- has_many :searches
-- has_many :items
-- has_ancestry
-
-## brandsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null :false|
-### Association
-- has_many :searches
-- has_many :items
-
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
