@@ -45,9 +45,10 @@
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|foreign_key :true|
-|brand_id|integer|foreign_key :true|
-|category_id|integer|foreign_key :true|
+|seller_id|integer|foreign_key :true|
+|buyer_id|integer|foreign_key :true|
+|brand|string|null: false|
+|category|string|null: false|
 |name|string|null: false|
 |description|text|null: false|
 |state|text|null: false|
@@ -56,9 +57,8 @@
 |shipping_days|string|null: false|
 |price|interger|null: false|
 ### Association
-- belongs_to :user
-- belongs_to :category
-- belongs_to :brand
+- belongs_to :seller
+- belongs_to :buyer
 - has_many :images
 
 ## imagesテーブル
