@@ -33,6 +33,6 @@ Rails.application.routes.draw do
 
   resources :items, only: [:index, :new, :create, :edit, :update]
 
-  resources :cards , only: [:new, :index, :create, :destroy]
+  resources :cards , only: [:new, :show, :create, :destroy, :index]
 
 end

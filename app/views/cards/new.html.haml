@@ -8,7 +8,7 @@
         .content__credit--card
           .content__credit--card__inner
 
-            = form_with url: cards_path, method: :post, html: { name: "inputForm" } do |f| 
+            = form_with method: :post, html: { name: "inputForm" } do |f| 
 
               = f.label :カード番号, class: 'label'
               %span.cards-expire--require 必須
@@ -70,5 +70,4 @@
       });
     });
   },false);
-    = render partial: "/shared/footer"
 
