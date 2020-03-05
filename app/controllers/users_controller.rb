@@ -7,7 +7,5 @@ class UsersController < ApplicationController
   def logout
   end
 
-  def howToPay
-  end
   
 end

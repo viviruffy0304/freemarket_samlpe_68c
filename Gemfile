@@ -79,10 +79,10 @@ gem 'fog-aws'
 gem 'mini_magick'
 gem 'haml-rails'
 gem 'font-awesome-rails'
-
 gem 'devise'
 gem 'activerecord-session_store'
 gem 'jquery-rails'
 gem 'payjp'
-
 gem 'ancestry'
+gem 'erb2haml'
+

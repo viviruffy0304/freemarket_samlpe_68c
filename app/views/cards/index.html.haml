@@ -12,11 +12,11 @@
             - if @card.present?
               %ul.content__credit-cards__list
                 %li
-                  = form_with url: card_path(@card.id), method: :delete, local: true, id: 'charge-form' do |f|
-                    -# カードブランドのアイコンを表示する場合-----
+                  = form_with url: cards_path(@card.id), method: :delete, local: true, id: 'charge-form' do |f|
                     %figure
-                      = image_tag "credit-cards/#{@card_src}", width: '26', height: '20', alt: @card_brand, id: "card_image"
-                    -#----------------------------------
+
+                      -# = image_tag "credit-cards/#{@card_src}", width: '26', height: '20', alt: @card_brand, id: "card_image"
+
                     .content__credit-cards__list--pay-num
                       = "**** **** **** " + @card_information.last4
                     .content__credit-cards__list--pay-num
@@ -33,12 +33,13 @@
                       = flash[:alert]
                     - else
                       -# = render 'cards#new' -# カードが登録されていない場合は登録ボタンを表示するようにしています。
-          .darkSkyblue_btn
-            = link_to "/cards/new", class: "blue_btn" do
-              %i.fas.fa-credit-card
-              クレジットカードを追加する
-        .how_to_payBox
-          = link_to "#", class: "pay_link" do
-            支払い方法について
-            %i.fas.fa-chevron-right
+          .darkSkyblue
+            .darkSkyblue_btn
+              = link_to "/cards/new", class: "blue_btn" do
+                %i.fas.fa-credit-card
+                クレジットカードを追加する
+          .how_to_payBox
+            = link_to "#", class: "pay_link" do
+              支払い方法について
+              %i.fas.fa-chevron-right
   = render partial: "/shared/footer"
