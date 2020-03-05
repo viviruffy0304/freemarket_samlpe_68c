@@ -11,7 +11,6 @@ class ItemsController < ApplicationController
 
   def create
     # Team.create(item_params)
-    # binding.pry
     @item = Item.new(item_params)
     if @item.save
       # flash[:success] = "商品を登録しました"
@@ -19,10 +18,19 @@ class ItemsController < ApplicationController
       
       render 'index'
     else
-      # flash[:danger] = "商品登録に失敗しました"
-      # binding.pry
+      
       render 'new'
     end
+  end
+
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    item = Item.find(params[:id])
+    item.update(item_params)
+    redirect_to item_path(item.id)
   end
 
   private
@@ -36,7 +44,7 @@ class ItemsController < ApplicationController
       :name, 
       :description, 
       :state, 
-      :postage, 
+      :postaget, 
       :region, 
       :shipping_days, 
       :price, 
