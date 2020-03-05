@@ -1,9 +1,11 @@
 class ProductsController < ApplicationController
   def index
+    @items = Item.all
   end
 
   def new
-    #@item = Item.new
+   
+
   end
 
   def edit
@@ -12,8 +14,7 @@ class ProductsController < ApplicationController
   end
 
   def update
-    #item = Item.find(params[:id])
-    #item.update(item_params)
-    #redirect_to item_path(item.id)
+    
+
   end
 end
