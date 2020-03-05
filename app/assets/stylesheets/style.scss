@@ -648,14 +648,15 @@
             }
             .product__info{
               color: #333;
-              padding: 16px;
+              padding: 0px;
               line-height: 1.4;
               .name{
                 font-weight: normal;
               }
               .product__info__image{
+                height: 200px;
                 img{
-                  height: 188px;
+                  height: 200px;
                 }
                 .items-box_photo__sold{
                   width: 0;
@@ -666,7 +667,7 @@
                   border-left: 60px solid #ea352d ;
                   z-index:100;
                   position: relative;
-                  top:-320px;
+                  top:-210px;
                   &__inner{
                     transform: rotate(-45deg);
                     font-size: 28px;
@@ -704,6 +705,7 @@
               p{
                 font-size: 10px;
                 text-align: left;
+                margin-bottom: 30px;
               }
             }
           }
