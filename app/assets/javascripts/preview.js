@@ -1,5 +1,4 @@
 $(function(){
-  // let file_field = document.querySelector('input[type=file]')
   $(document).off('click').on('click', '.upload_image', function(){
   })
   $(document).first().off('change').on('change', '.upload_image', function(){
@@ -109,7 +108,6 @@ $(function(){
       <div class="image_text">クリックしてファイルをアップロード</div>
       `
       $(".upload_image").after(html)
-      // $("#item_images_attributes_0_image").last().remove()
     }
     else if(num == 9){
       $('#item_image_six_to_ten').css('display', 'block')

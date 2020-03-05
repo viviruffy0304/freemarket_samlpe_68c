@@ -18,9 +18,18 @@ class ItemsController < ApplicationController
       
       render 'index'
     else
-      # flash[:danger] = "商品登録に失敗しました"
       render 'new'
     end
+  end
+
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    item = Item.find(params[:id])
+    item.update(item_params)
+    redirect_to item_path(item.id)
   end
 
   private
@@ -34,7 +43,7 @@ class ItemsController < ApplicationController
       :name, 
       :description, 
       :state, 
-      :postage, 
+      :postaget, 
       :region, 
       :shipping_days, 
       :price, 
