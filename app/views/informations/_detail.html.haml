@@ -69,7 +69,7 @@
           .page_manage
             .seller_btn
             - if user_signed_in? && current_seller.id == @item.seller_id
-              %a.item-edit-btn{href: "#"}
+              %a.item-edit-btn{href: "/items/:id/edit"}
                 編集画面に進む
               %a.item-delete-btn{href: "#"}
                 削除画面に進む
