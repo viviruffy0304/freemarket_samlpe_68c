@@ -31,7 +31,7 @@
           .itemBox__body
             %ul
               %li
-                = image_tag(@item.images.first.image.url)
+                //= image_tag(@item.images.first.image.url)
                 %ul
                   %li
                     
@@ -60,14 +60,15 @@
                 %tr
                   %th カテゴリー
                   %td
-                    =link_to "#{@item.category_id}"
-                    %br/
-                    
-                    %br/
-                    
+                    =@item.category
                 %tr
                   %th ブランド
                   %td
+                
+                %tr
+                  %th 商品の説明
+                  %td 
+                    =@item.description
                 %tr
                   %th 商品の状態
                   %td 
