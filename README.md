@@ -47,6 +47,7 @@
 |name|string|null :false|
 ### Association
 - has_many :items
+- has_ancestry
 
 ## brandsテーブル
 |Column|Type|Options|
@@ -68,7 +69,7 @@
 |state|text|null: false|
 |postage|string|null: false|
 |region|string|null: false|
-|shipping-days|string|null: false|
+|shipping_days|string|null: false|
 |price|interger|null: false|
 ### Association
 - belongs_to :user
