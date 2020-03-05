@@ -7,8 +7,7 @@ class InformationsController < ApplicationController
   end
 
   def show
-    # @images = Image.where(item_id: @item.id)
-    # @category = @item.category
+    
   end
 
   
@@ -22,9 +21,5 @@ class InformationsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
-  end
-
-  def set_seller
-    # @user = User.find(params[:seller_id])
   end
 end
