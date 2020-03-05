@@ -31,7 +31,7 @@
           .itemBox__body
             %ul
               %li
-                = image_tag(item.images.first.image.url)
+                = image_tag(@item.images.first.image.url)
                 -# = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png'
                 %ul
                   %li
@@ -47,7 +47,7 @@
 
           .itemBox__price
             %span
-              = item.price
+              = @item.price
             .itemBox__price-detail
               %span
                 (税込)
@@ -65,7 +65,7 @@
                 %tr
                   %th カテゴリー
                   %td
-                    =link_to "レディース"
+                    =link_to "#{@item.category_id}"
                     %br/
                     -# =link_to "トップス" 
                     %br/
@@ -76,46 +76,49 @@
                 %tr
                   %th 商品の状態
                   %td 
-                    -if @item.state == "２"
-                      新品
-                    -elsif @item.state == "３"
-                      中古
-                    -else
-                      パチモン
+                    =@item.state
+                    -# -if @item.state == "２"
+                    -#   新品
+                    -# -elsif @item.state == "３"
+                    -#   中古
+                    -# -else
+                    -#   パチモン
                 %tr
                   %th 配送料の負担
                   %td 
-                    -if @item.postage == "２"
-                      送料込み
-                    -else
-                      着払い
+                    =@item.postage
+                    -# -if @item.postage == "２"
+                    -#   送料込み
+                    -# -else
+                    -#   着払い
                 %tr
                   %th 発送元の地域
                   %td
-                    -if @item.region == "２"
-                      北海道
-                    -elsif @item.region == "３"
-                      東京
-                    -else
-                      愛知
+                    =@item.region
+                    -# -if @item.region == "２"
+                    -#   北海道
+                    -# -elsif @item.region == "３"
+                    -#   東京
+                    -# -else
+                    -#   愛知
                 %tr
                   %th 発送日の目安
                   %td 
-                    -if @item.shipping_days == "２"
-                      1〜2日で発送
-                    -elsif @item.shipping_days == "３"
-                      2〜3日で発送
-                    -else
-                      4〜7日で発送
+                    =@item.shipping_days
+                    -# -if @item.shipping_days == "２"
+                    -#   1〜2日で発送
+                    -# -elsif @item.shipping_days == "３"
+                    -#   2〜3日で発送
+                    -# -else
+                    -#   4〜7日で発送
           .page_manage
             .seller_btn
-
-              %a.item-edit-btn{href: "#"}
-                編集画面に進む
-              %a.item-delete-btn{href: "#"}
-                削除する
+              - if user_signed_in? && current_user.id == @item.seller_id   
+                %a.item-edit-btn{href: "#"}
+                  編集画面に進む
+                %a.item-delete-btn{href: "#"}
+                  削除する
             .buyer_btn
-
               %a.item-buy-btn{href: "#"}
                 購入画面に進む
       %ul.links
