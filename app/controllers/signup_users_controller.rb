@@ -30,7 +30,7 @@ class SignupUsersController < ApplicationController
       session[:id] = @user.id  #　ここでidをsessionに入れることでログイン状態に持っていく。
       redirect_to complete_signup_users_path
     else
-      render '/signup_users/step1'
+      render '/signup_users/step2'
     end
   end
 

@@ -370,6 +370,17 @@
           .l-single-text{
             font-size: 14px;
           }
+          .prefecture{
+            width: 100%;
+            margin: 8px 0 0;
+            height: 36px;
+            padding: 4px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+          }
         }
         .form-mail{
           margin: 32px;
@@ -443,6 +454,7 @@
           height: 50px;
           text-align: center;
           cursor: pointer;
+          margin: 30px;
         }
         .birthday-select-wrap{
           display: flex;
