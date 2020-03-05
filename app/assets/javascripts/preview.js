@@ -49,8 +49,6 @@ $(function(){
     }
 
     // ここから画像機能編集
-    
-    console.log("imageBoxが追加されました")
     image_number = $(".imageBox").length + 1
     html = 
     `
