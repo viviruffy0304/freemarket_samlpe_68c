@@ -67,9 +67,9 @@
                   %td
                     =link_to "#{@item.category_id}"
                     %br/
-                    -# =link_to "トップス" 
+                    
                     %br/
-                    -# =link_to "Tシャツ/カットソー(半袖/袖なし)"
+                    
                 %tr
                   %th ブランド
                   %td
@@ -77,40 +77,22 @@
                   %th 商品の状態
                   %td 
                     =@item.state
-                    -# -if @item.state == "２"
-                    -#   新品
-                    -# -elsif @item.state == "３"
-                    -#   中古
-                    -# -else
-                    -#   パチモン
+                    
                 %tr
                   %th 配送料の負担
                   %td 
                     =@item.postage
-                    -# -if @item.postage == "２"
-                    -#   送料込み
-                    -# -else
-                    -#   着払い
+                    
                 %tr
                   %th 発送元の地域
                   %td
                     =@item.region
-                    -# -if @item.region == "２"
-                    -#   北海道
-                    -# -elsif @item.region == "３"
-                    -#   東京
-                    -# -else
-                    -#   愛知
+                    
                 %tr
                   %th 発送日の目安
                   %td 
                     =@item.shipping_days
-                    -# -if @item.shipping_days == "２"
-                    -#   1〜2日で発送
-                    -# -elsif @item.shipping_days == "３"
-                    -#   2〜3日で発送
-                    -# -else
-                    -#   4〜7日で発送
+                    
           .page_manage
             .seller_btn
               - if user_signed_in? && current_user.id == @item.seller_id   
