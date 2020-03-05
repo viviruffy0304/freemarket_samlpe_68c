@@ -1,11 +1,8 @@
 $(function(){
   // let file_field = document.querySelector('input[type=file]')
   $(document).off('click').on('click', '.upload_image', function(){
-    console.log("ファイルクリック")
   })
   $(document).first().off('change').on('change', '.upload_image', function(){
-    console.log("処理初め")
-    // num = $(".imageBox").length
     var files = $('input[type="file"]').prop('files')[0]
     let fileReader = new FileReader();
     fileReader.onloadend = function(){
@@ -49,8 +46,6 @@ $(function(){
     }
 
     // ここから画像機能編集
-    
-    console.log("imageBoxが追加されました")
     image_number = $(".imageBox").length + 1
     html = 
     `
@@ -59,8 +54,6 @@ $(function(){
     $(".product_default_image").last().prepend(html)
     $(".product_default_image").last().removeAttr("for")
     $(".product_default_image").last().attr("for", `item_images_attributes_${image_number}_image`)
-    
-    console.log("処理終了")
   })
   $(document).off('click').on('click', ".item_image_deleteBtn", function(){
     let delete_object = $(this).parent().parent()
@@ -68,32 +61,25 @@ $(function(){
     n = parseInt(n, 10)
     delete_object.remove()
     let num = $(".imageBox").length
-    // $(`#item_images_attributes_${n}_image`).remove()
-    // let a = n + 1
     $(document).find(`#item_images_attributes_${n}_image`).remove()
     $(document).find(`#item_images_attributes_${num + 1}_image`).remove()
 
     // 繰り返し処理
     $.each($(document).find(".upload_image"), function(){
       text = $(this).attr("id")
-      console.log(text)
       text = text.replace(/[^0-9]/g, "");
       number = parseInt(text, 10)
-      console.log(n)
-      console.log(number)
       
       if(number > n){
         $(this).removeAttr("id")
         $(this).removeAttr("name")
         $(this).attr("id", `item_images_attributes_${number - 1}_image`)
         $(this).attr("name", `item[images_attributes][${number - 1}][image]`)
-        console.log($(this).attr("id"))
       }
     })
     $.each($(document).find(".imageBox"), function(){
       id_n = $(this).attr("id")
       id_n = parseInt(id_n)
-      console.log(id_n)
       if(id_n > n){
         $(this).removeAttr("id")
         $(this).attr("id", id_n - 1)
@@ -109,7 +95,6 @@ $(function(){
     $(".product_default_image").last().append(html)
     $(".product_default_image").last().removeAttr("for")
     $(".product_default_image").last().attr("for", `item_images_attributes_${num}_image`)
-    console.log("削除完了")
     // 上段を削除したときの処理
     if(num >= 5){
       if($("#flexBox_one_to_five").children(".imageBox").length == 4){
@@ -145,7 +130,6 @@ $(function(){
   })
   $(".priceBox").off("keyup").on("keyup", function(){
     if($(this).val() >= 300 && $(this).val() <= 9999999){
-      console.log($(this).val())
       $('.price_text').remove()
       a_html =
       `
@@ -173,10 +157,4 @@ $(function(){
       $("#profit_Box").children(".topBox").after(html)
     }
   })
-  
-
-
 })
-
-
-// {<input class="upload_image" type="file" name="item[images_attributes][0][image]" id="item_images_attributes_0_image"> */}
