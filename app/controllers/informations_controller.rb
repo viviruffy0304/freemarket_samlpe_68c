@@ -3,6 +3,7 @@ class InformationsController < ApplicationController
 
 
   def index
+    @items = Item.limit(3).order('created_at DESC')
   end
 
   def show
@@ -15,8 +16,9 @@ class InformationsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:user_id, :seller_id, :buyer_id, :brand_id,:category_id, :description, :state, :postaget, :region,:shipping_days, :price, images_attributes: [:id, :image]).merge(seller_id: current_user.id)
+    params.require(:item).permit(:user_id, :seller_id, :buyer_id, :brand_id,:category_id, :description, :state, :postage, :region,:shipping_days, :price, images_attributes: [:id, :image]).merge(seller_id: current_user.id)
   end
+
 
   def set_item
     @item = Item.find(params[:id])
@@ -25,5 +27,4 @@ class InformationsController < ApplicationController
   def set_seller
     # @user = User.find(params[:seller_id])
   end
-
 end

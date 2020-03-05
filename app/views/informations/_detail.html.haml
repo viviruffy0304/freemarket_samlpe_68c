@@ -25,14 +25,7 @@
     .contentLeftqq
     .contentRight
       .topContent
-        .itemBox
-          .page_manage
-            この商品ページを
-            .edit
-              =link_to "編集" 
-            .delete
-              =link_to "削除" 
-              
+        .itemBox      
           %h2.itemBox__name 
             = @item.name
           .itemBox__body
@@ -40,7 +33,6 @@
               %li
                 = image_tag(item.images.first.image.url)
                 -# = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png'
-
                 %ul
                   %li
                     -# = image_tag images.image2.url
@@ -51,9 +43,11 @@
                   %li
                     -# = image_tag images.image4.url
                     -# = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/9/a003.png"
+                -# = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png'
+
           .itemBox__price
             %span
-              -# = item.price
+              = item.price
             .itemBox__price-detail
               %span
                 (税込)
@@ -78,9 +72,6 @@
                     -# =link_to "Tシャツ/カットソー(半袖/袖なし)"
                 %tr
                   %th ブランド
-                  %td
-                %tr
-                  %th 商品のサイズ
                   %td
                 %tr
                   %th 商品の状態
@@ -116,6 +107,17 @@
                       2〜3日で発送
                     -else
                       4〜7日で発送
+          .page_manage
+            .seller_btn
+
+              %a.item-edit-btn{href: "#"}
+                編集画面に進む
+              %a.item-delete-btn{href: "#"}
+                削除する
+            .buyer_btn
+
+              %a.item-buy-btn{href: "#"}
+                購入画面に進む
       %ul.links
         %li
           =link_to "#" do
