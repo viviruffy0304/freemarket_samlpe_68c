@@ -32,7 +32,7 @@
               商品名
             .rightBox
               必須
-          = form.text_field :name, placeholder: "商品名", class: "product_name"
+          = form.text_field :name, placeholder: "商品名を記入してください", class: "product_name"
         .product_Box
           .topBox
             .leftBox
@@ -49,6 +49,7 @@
               カテゴリー
             .rightBox
               必須
+
           = form.select :category_name, [['選択してください', 1], ['レディース', 2], ['メンズ', 3], ['ベビー', 4]], {}, {class: "selectBox"}
         .product_Box
           .topBox
@@ -56,7 +57,7 @@
               ブランド
             .rightBox-n
               任意
-          = form.text_field :brand_id, placeholder: "", class: "product_name"
+          = form.text_field :brand, placeholder: "", class: "product_name"
         .product_Box
           .topBox
             .leftBox
@@ -99,7 +100,7 @@
               必須
           .yen_text
             ¥
-          = form.number_field :priceBox, placeholder: "0", class: "priceBox", min: 0, max: 9999999
+          = form.number_field :price, placeholder: "0", class: "priceBox", min: 0, max: 9999999
         .tax_Box
           .topBox
             .lightBox
@@ -113,10 +114,9 @@
           .price_text
             ¥900
         .item_sellBox
-          = link_to "#", class: "sellBtn" do
-            情報を更新して出品する
+          = form.submit "情報を更新して出品する"
         .back_toBox
-          = link_to "#", class: "backBtn" do
+          = link_to "/informations/:id", class: "backBtn" do
             もどる
         .guideline
           禁止されている

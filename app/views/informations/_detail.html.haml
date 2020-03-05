@@ -68,13 +68,11 @@
                   %td 1-2日で発送
           .page_manage
             .seller_btn
-            - if user_signed_in? && current_seller.id == @item.seller_id
-              %a.item-edit-btn{href: "/items/:id/edit"}
+              %a.item-edit-btn{href: "#"}
                 編集画面に進む
               %a.item-delete-btn{href: "#"}
                 削除画面に進む
             .buyer_btn
-            - if user_signed_in? && current_user.id == @post.user_id
               %a.item-buy-btn{href: "#"}
                 購入画面に進む
 
