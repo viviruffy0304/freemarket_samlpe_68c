@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2020_03_02_055722) do
     t.string "customer_id", null: false
     t.integer "card_number"
     t.string "card_id"
+
   end
 
 
@@ -44,6 +45,7 @@ ActiveRecord::Schema.define(version: 2020_03_02_055722) do
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
