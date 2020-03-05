@@ -331,6 +331,7 @@
         margin: 0 auto;
         .form-group {
           margin: 32px;
+
           label {
             font-weight: 600;
             font-size: 14px;
@@ -343,6 +344,17 @@
             color: #fff;
             font-size: 12px;
             vertical-align: top;
+            position: absolute;
+            }
+          
+          &_birthday{
+            width: 380px;
+            select{
+              height: 50px;
+              width: 90px;
+              margin-top: 15px;
+              margin-bottom: 25px; 
+            }
           }
           .input-default{
             width: 100%;
@@ -357,6 +369,70 @@
           }
           .l-single-text{
             font-size: 14px;
+          }
+        }
+        .form-mail{
+          margin: 32px;
+          &_label{
+            display: flex;
+            label {
+              font-weight: 600;
+              font-size: 14px;
+            }
+            .form-require{
+              background: #3CCACE;
+              margin: 0 0 0 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              font-size: 12px;
+              vertical-align: top;
+              position: absolute;
+              margin-left: 7%;
+            }
+          }
+          .input-default2{
+            width: 100%;
+            margin: 8px 0 0;
+            height: 36px;
+            padding: 4px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+          }
+        }
+        .form-names{
+          margin: 32px;
+          &-name{
+            display: flex;
+            margin-top: 20px;
+            label {
+              font-weight: 600;
+              font-size: 14px;
+            }
+            .form-require{
+              background: #3CCACE;
+              margin: 0 0 0 8px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              color: #fff;
+              font-size: 12px;
+              vertical-align: top;
+              margin-left: 7%;
+            }
+          }
+          .input-default3{
+            width: 100%;
+            margin: 8px 0 0;
+            height: 36px;
+            padding: 4px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
           }
         }
         .btn_default_btn{
