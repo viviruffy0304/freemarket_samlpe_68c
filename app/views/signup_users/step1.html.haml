@@ -1,4 +1,3 @@
-
 %body
   .single-container
     .single-container--header
@@ -41,19 +40,19 @@
               = f.text_field :f_first_name,{class: "input-default", placeholder: "例) ヤマダ"}
               = f.text_field :f_last_name,{class: "input-default", placeholder: "例) アヤ"}
             .form-group
-              = f.label :birthday, "生年月日" 
-              %span.form-require 必須            
+              = f.label :birthday, "生年月日"
+              %span.form-require 必須
               = f.select :birthday_year,["--"], {} ,{class: "birthday-year-select", id: "year"}
               年
-              = f.select :birthday_month, ["--"], {},{class: "birthday-month-select", id:"month"}                   
+              = f.select :birthday_month, ["--"], {},{class: "birthday-month-select", id:"month"}
               月
               = f.select :birthday_day, ["--"], {},{class: "birthday-day-select", id:"day"}
               日
               %p.l-single-text.text-center
                 「次へ進む」のボタンを押すことは、
                 %a{href: "/jp/tos_list/", target: "_blank"}> 利用規約
-                に同意したものとみなします  
-            = f.submit '次へ進む', class: "btn_default_btn"    
+                に同意したものとみなします
+            = f.submit '次へ進む', class: "btn_default_btn"
             .form-group.text-right
               %p
                 %a{href: "/jp/help_center/article/423/", target: "_blank"}
@@ -81,4 +80,3 @@
         = link_to image_tag('logo.png', class: 'logo__image'), "#"
       %p.mains__footer__c-mark
         © FURIMA,inc.
-

@@ -85,3 +85,4 @@ gem 'activerecord-session_store'
 gem 'jquery-rails'
 gem 'payjp'
 
+gem 'ancestry'
