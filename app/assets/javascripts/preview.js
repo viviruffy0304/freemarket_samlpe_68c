@@ -56,7 +56,7 @@ $(function(){
     `
     <input accept="image/jpg,image/jpeg,image/png,image/gif" class="upload_image" type="file" name="item[images_attributes][${image_number}][image]" id="item_images_attributes_${image_number}_image">
     `
-    $(".product_default_image").last().append(html)
+    $(".product_default_image").last().prepend(html)
     $(".product_default_image").last().removeAttr("for")
     $(".product_default_image").last().attr("for", `item_images_attributes_${image_number}_image`)
     

@@ -11,7 +11,7 @@ class ItemsController < ApplicationController
 
   def create
     # Team.create(item_params)
-    binding.pry
+    # binding.pry
     @item = Item.new(item_params)
     if @item.save
       # flash[:success] = "商品を登録しました"
