@@ -18,7 +18,6 @@ class ItemsController < ApplicationController
       
       render 'index'
     else
-      
       render 'new'
     end
   end
