@@ -47,14 +47,14 @@
               カテゴリー
             .rightBox
               必須
-          = form.select :category_id, [['選択してください', 1], ['レディース', 2], ['メンズ', 3], ['ベビー', 4]], {}, {class: "selectBox"}
+          = form.select :category, [['選択してください', 1], ['レディース', 2], ['メンズ', 3], ['ベビー', 4]], {}, {class: "selectBox"}
         .product_Box
           .topBox
             .leftBox
               ブランド
             .rightBox-n
               任意
-          = form.text_field :brand_id, placeholder: "シャネル", class: "product_name"
+          = form.text_field :brand, placeholder: "シャネル", class: "product_name"
         .product_Box
           .topBox
             .leftBox

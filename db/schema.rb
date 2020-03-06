@@ -12,7 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2020_03_02_055722) do
 
-
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
     t.string "postal_code", null: false
@@ -25,39 +24,32 @@ ActiveRecord::Schema.define(version: 2020_03_02_055722) do
     t.integer "prefectures", null: false
   end
 
-  create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id", null: false
-    t.string "customer_id", null: false
+    t.integer "customer_id", null: false
     t.integer "card_number"
-    t.string "card_id"
-
+    t.integer "year", null: false
+    t.integer "month", null: false
+    t.integer "security_number", null: false
   end
-
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "item_id"
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
     t.integer "seller_id"
     t.integer "buyer_id"
-    t.integer "brand_id"
-    t.integer "category_id"
+    t.string "brand", limit: 25
+    t.string "category", limit: 25
     t.string "name", null: false
     t.text "description", null: false
     t.text "state", null: false
-    t.string "postaget", null: false
+    t.string "postage", limit: 25
     t.string "region", null: false
     t.string "shipping_days", null: false
     t.integer "price", null: false
