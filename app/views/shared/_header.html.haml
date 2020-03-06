@@ -34,12 +34,16 @@
                 %li
                   %a.init-right
                     = link_to"Child Menu", "#", id: "#"
-      .listsRight
-        %li.listsRight__item.listsRight__item--login
-          = link_to "ログイン", "/signin_users/show"
-        %li.listsRight__item.listsRight__item--new
-          = link_to "新規会員登録", "signup_users"
-
+      - if !user_signed_in?
+        .listsRight
+          %li.listsRight__item.listsRight__item--login
+            = link_to "ログイン", "/signin_users/show"
+          %li.listsRight__item.listsRight__item--new
+            = link_to "新規会員登録", "signup_users"
+      - else
+        .listsRight
+          %li.listsRight__item
+            = link_to "マイページ", "/users"
 
 
 

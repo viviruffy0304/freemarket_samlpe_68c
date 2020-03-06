@@ -7,7 +7,7 @@ class InformationsController < ApplicationController
   end
 
   def show
-    
+    @user = User.find(@item.seller_id)
   end
 
   def destroy
@@ -25,7 +25,6 @@ class InformationsController < ApplicationController
   def item_params
     params.require(:item).permit(:user_id, :seller_id, :buyer_id, :brand_id,:category_id, :description, :state, :postage, :region,:shipping_days, :price, images_attributes: [:id, :image]).merge(seller_id: current_user.id)
   end
-
 
   def set_item
     @item = Item.find(params[:id])
