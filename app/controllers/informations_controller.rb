@@ -1,5 +1,5 @@
 class InformationsController < ApplicationController
-  before_action :set_item, only: [:show, :edit, ]
+  before_action :set_item, only: [:show, :edit, :destroy]
 
 
   def index
@@ -11,8 +11,13 @@ class InformationsController < ApplicationController
   end
 
   def destroy
-    @item = Item.find(params[:id])
-    @item.destroy
+    
+    if @item.seller_id == current_user.id
+      @item.destroy
+    else
+      redirect_to edit_item_path(@item)
+    end
+
   end
 
   private
