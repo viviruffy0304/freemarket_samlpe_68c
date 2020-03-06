@@ -32,7 +32,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to informations_path
     else
-      render '/items/edit' unless @item.valid?
+      render '#' unless @item.valid?
     end
   end
 
