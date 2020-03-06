@@ -31,6 +31,10 @@ Rails.application.routes.draw do
 
   resources :items, only: [:index, :new, :create, :edit, :update]
 
-  resources :cards , only: [:new, :show, :create, :destroy, :index]
-
+  resources :cards , only: [:new, :show, :create, :destroy, :index] do
+    collection do
+      get 'done'
+    end
+  end
+  
 end
