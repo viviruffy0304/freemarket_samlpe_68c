@@ -11,11 +11,11 @@ class InformationsController < ApplicationController
   end
 
   def destroy
-    
+
     if @item.seller_id == current_user.id
       @item.destroy
     else
-      redirect_to edit_item_path(@item)
+      redirect_to edit_item_path
     end
 
   end
