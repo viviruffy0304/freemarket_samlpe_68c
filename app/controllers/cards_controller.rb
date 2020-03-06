@@ -7,7 +7,11 @@ class CardsController < ApplicationController
     redirect_to action: "index" if card.present?
   end
 
-  def index #CardのデータをPayjpに送って情報を取り出す
+  def index
+    
+  end
+
+  def show #CardのデータをPayjpに送って情報を取り出す
     if @card.present?
       Payjp.api_key = "sk_test_9c5b009b4c2db8f24416cfd2"
       customer = Payjp::Customer.retrieve(@card.customer_id)

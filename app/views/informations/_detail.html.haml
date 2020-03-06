@@ -31,7 +31,7 @@
           .itemBox__body
             %ul
               %li
-                //= image_tag(@item.images.first.image.url)
+                = image_tag(@item.images.first.image.url)
                 %ul
                   %li
                     
@@ -60,7 +60,7 @@
                 %tr
                   %th カテゴリー
                   %td
-                    =@item.category
+                    =@item.category_id
                 %tr
                   %th ブランド
                   %td
@@ -92,6 +92,7 @@
           .page_manage
             .seller_btn
               - if user_signed_in? && current_user.id == @item.seller_id   
+
                 .item-edit-btn
                 =limk_to "編集画面に進む", item_edit_path,class: "item-edit-btn"
                 .item-delete-btn 
