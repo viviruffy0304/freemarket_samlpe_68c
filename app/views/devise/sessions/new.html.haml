@@ -28,7 +28,7 @@
 
       .logins__row__container__form
 
-        = form_with(url: user_session_path, local: true, method: :post) do |f|
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
           .form-field
             .form-field__input
               = f.email_field :email, autofocus: true, placeholder: "メールアドレス"
@@ -52,6 +52,3 @@
   
   .logins__row__footer
     %p © Furima, Inc. All Rights Reserved.     
-
-
-
