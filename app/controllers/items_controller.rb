@@ -27,9 +27,13 @@ class ItemsController < ApplicationController
   end
 
   def update
-    item = Item.find(params[:id])
-    item.update(item_params)
-    redirect_to item_path(item.id)
+    @item = Item.find(params[:id])
+    @item.update(item_params)
+    if @item.save
+      redirect_to informations_path
+    else
+      render '/items/edit' unless @item.valid?
+    end
   end
 
   private
@@ -38,12 +42,12 @@ class ItemsController < ApplicationController
   # end
   def item_params
     params.require(:item).permit(
-      :brand_id, 
-      :category_id, 
+      :brand, 
+      :category, 
       :name, 
       :description, 
       :state, 
-      :postaget, 
+      :postage, 
       :region, 
       :shipping_days, 
       :price, 
