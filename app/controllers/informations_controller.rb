@@ -15,7 +15,7 @@ class InformationsController < ApplicationController
     if @item.seller_id == current_user.id
       @item.destroy
     else
-      redirect_to edit_item_path
+      redirect_to information_path
     end
 
   end
