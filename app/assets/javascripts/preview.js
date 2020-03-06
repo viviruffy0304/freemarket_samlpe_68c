@@ -2,7 +2,16 @@ $(function(){
   $(document).off('click').on('click', '.upload_image', function(){
   })
   $(document).first().off('change').on('change', '.upload_image', function(){
-    var files = $('input[type="file"]').prop('files')[0]
+    console.log($('input[type="file"]'))
+    let files 
+    if($(".imageBox").length < 5){
+      files = $('.upload_image').first().prop('files')[0]
+      
+    }else{
+      // 本来6番目だが、1~5のflexBoxにiconのfa-cameraが詰まっているため7番目となる
+      files = $(`#item_images_attributes_${$(".imageBox").length}_image`).prop('files')[0]
+      console.log($(`#item_images_attributes_${$(".imageBox").length}_image`))
+    }
     let fileReader = new FileReader();
     fileReader.onloadend = function(){
       let src = fileReader.result
@@ -33,7 +42,6 @@ $(function(){
       <div class="flexBox" id='flexBox_six_to_ten'>
         <label class="product_default_image" id="item_image_six_to_ten" for="item_image">
           <i class="fas fa-camera"></i>
-          <input class="upload_image" type="file" name="item[image]" id="upload_image_six_to_ten">
           <div class="image_text">クリックしてファイルをアップロード</div>
         </label>
       </div>
@@ -91,14 +99,21 @@ $(function(){
     `
     <input accept="image/jpg,image/jpeg,image/png,image/gif" class="upload_image" type="file" name="item[images_attributes][${num}][image]" id="item_images_attributes_${image_number}_image">
     `
-    $(".product_default_image").last().append(html)
-    $(".product_default_image").last().removeAttr("for")
-    $(".product_default_image").last().attr("for", `item_images_attributes_${num}_image`)
+    if(num <= 4){
+      $(".product_default_image").first().append(html)
+      $(".product_default_image").first().removeAttr("for")
+      $(".product_default_image").first().attr("for", `item_images_attributes_${num}_image`)
+    }else{
+      $(".product_default_image").last().append(html)
+      $(".product_default_image").last().removeAttr("for")  
+      $(".product_default_image").last().attr("for", `item_images_attributes_${num}_image`)
+    }
     // 上段を削除したときの処理
     if(num >= 5){
       if($("#flexBox_one_to_five").children(".imageBox").length == 4){
         // 上段を削除した際に下段の初めから要素をとってきて移動させる
-        image = $("#flexBox_six_to_ten").children(".imageBox:first").insertBefore($('#flexBox_one_to_five').children('#item_image_one_to_five'))
+        $("#flexBox_six_to_ten").children(".imageBox:first").insertBefore($('#flexBox_one_to_five').children('#item_image_one_to_five'))
+        $("#item_images_attributes_4_image").insertBefore($("#item_images_attributes_3_image"))
       }
     }
     // imageBoxが残っていないとき
