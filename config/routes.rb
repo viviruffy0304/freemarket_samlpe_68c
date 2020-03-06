@@ -2,13 +2,12 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-
   root to: "signup_users#index"
-  resources :products, only: [:index, :new]
-  resources :informations
-  resources :tests, only: :show do
+
+  resources :informations, only: [:index , :show, :destroy]
+  resources :tests, only: [:index , :show] do
     collection do
-      get :done
+      post :done
     end
   end 
 
@@ -29,6 +28,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :cards , only: [:new, :index, :create]
+
+  resources :items, only: [:index, :new, :create, :edit, :update]
+
+  resources :cards , only: [:new, :show, :create, :destroy, :index]
 
 end

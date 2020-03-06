@@ -102,91 +102,26 @@
           %h3.title 
             新規投稿商品
       .productLists
-        .productList
-          = link_to image_tag('https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png') do
-            .product__info
-              %h3.name
-                product3
-              %ul.details
-                %li.price
-                  30000円
-                %li.like
-                  %i.fas.fa-star
-                  0
-              %p
-                (税込)
-        .productList
-          = link_to image_tag('https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png') do
-            .product__info
-              %h3.name
-                product2
-              %ul.details
-                %li.price
-                  20000円
-                %li.like
-                  %i.fas.fa-star
-                  0
-              %p
-                (税込)
-        .productList
-          = link_to image_tag('https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png') do
-            .product__info
-              %h3.name
-                product1
-              %ul.details
-                %li.price
-                  10000円
-                %li.like
-                  %i.fas.fa-star
-                  0
-              %p
-                (税込)
-  
-  %section.pickUpContainer
-    .head
-      ピックアップブランド
-    .productContainer
-      .productHead
-        = link_to "#" do
-          %h3.title 
-            アーカイバ
-      .productLists
-        .productList
-          = link_to image_tag('https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png') do
-            .product__info
-              %h3.name
-                product3
-              %ul.details
-                %li.price
-                  30000円
-                %li.like
-                  %i.fas.fa-star
-                  0
-              %p
-                (税込)
-        .productList
-          = link_to image_tag('https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png') do
-            .product__info
-              %h3.name
-                product2
-              %ul.details
-                %li.price
-                  20000円
-                %li.like
-                  %i.fas.fa-star
-                  0
-              %p
-                (税込)
-        .productList
-          = link_to image_tag('https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png') do
-            .product__info
-              %h3.name
-                product1
-              %ul.details
-                %li.price
-                  10000円
-                %li.like
-                  %i.fas.fa-star
-                  0
-              %p
-                (税込)
+        - @items.each do |item|
+          .productList
+            = link_to information_path(item.id), method: :get do
+              .product__info
+                %h3.name
+                  = item.name 
+                .product__info__image
+                  //= image_tag(item.images.first.image.url, resize: '188x188')
+                  -if item.buyer_id.present? 
+                    .items-box_photo__sold
+                      .items-box_photo__sold__inner
+                        SOLD
+                %ul.details
+                  %li.price
+                    %p
+                    ¥
+                    = item.price 
+                  %li.like
+                    %i.fas.fa-star
+                    0
+                %p
+                  (税込)¥
+                  = (item.price * 1.1).ceil

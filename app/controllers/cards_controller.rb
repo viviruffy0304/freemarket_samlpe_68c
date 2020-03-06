@@ -7,7 +7,11 @@ class CardsController < ApplicationController
     redirect_to action: "index" if card.present?
   end
 
-  def index #CardのデータをPayjpに送って情報を取り出す
+  def index
+    
+  end
+
+  def show #CardのデータをPayjpに送って情報を取り出す
     if @card.present?
       Payjp.api_key = "sk_test_9c5b009b4c2db8f24416cfd2"
       customer = Payjp::Customer.retrieve(@card.customer_id)
@@ -17,17 +21,17 @@ class CardsController < ApplicationController
       @card_brand = @card_information.brand      
       case @card_brand
       when "Visa"
-        @card_src = "visa.svg"
+        @card_src = "logo-visa.png"
       when "JCB"
-        @card_src = "jcb.svg"
+        @card_src = "logo-jcb.gif"
       when "MasterCard"
         @card_src = "master-card.svg"
       when "American Express"
-        @card_src = "american_express.svg"
+        @card_src = "American_Express.logo.png"
       when "Diners Club"
-        @card_src = "dinersclub.svg"
+        @card_src = "diners_logo.gif"
       when "Discover"
-        @card_src = "discover.svg"
+        @card_src = "discover card.logo.jpg"
       end
       # ---------------------------------------------------------------
     end
@@ -53,6 +57,17 @@ class CardsController < ApplicationController
       else
         redirect_to action: "create"
       end
+    end
+  end
+
+  def destroy 
+    Payjp.api_key = "sk_test_9c5b009b4c2db8f24416cfd2"
+    customer = Payjp::Customer.retrieve(@card.customer_id)
+    customer.delete
+    if @card.destroy 
+      redirect_to action: "index", notice: "削除しました"
+    else 
+      redirect_to action: "index", alert: "削除できませんでした"
     end
   end
 

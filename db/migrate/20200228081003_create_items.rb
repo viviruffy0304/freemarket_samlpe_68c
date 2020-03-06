@@ -1,9 +1,9 @@
 class CreateItems < ActiveRecord::Migration[5.2]
   def change
     create_table :items do |t|
-      t.integer :user_id, foreign_key: true
+      t.integer :user_id
       t.integer :seller_id, foreign_key: true
-      t.integer :buyer_id, foreign_key: true
+      t.integer :buyer_id
       t.integer :brand_id, foreign_key: true
       t.integer :category_id, foreign_key: true
       t.string :name, null: false
