@@ -31,7 +31,7 @@
           .itemBox__body
             %ul
               %li
-                //= image_tag(@item.images.first.image.url)
+                = image_tag(@item.images.first.image.url)
                 %ul
                   %li
                     
@@ -60,7 +60,7 @@
                 %tr
                   %th カテゴリー
                   %td
-                    =@item.category
+                    =@item.category_id
                 %tr
                   %th ブランド
                   %td
@@ -94,8 +94,8 @@
               - if user_signed_in? && current_user.id == @item.seller_id   
                 %a.item-edit-btn{href: "#"}
                   編集画面に進む
-                %a.item-delete-btn{href: information_path, method: :delete, class: 'btn'}
-                  削除する
+                .item-delete-btn
+                =link_to "削除する",information_path, method: :delete, class: 'item-delete-btn'
             .buyer_btn
               %a.item-buy-btn{href: "#"}
                 購入画面に進む

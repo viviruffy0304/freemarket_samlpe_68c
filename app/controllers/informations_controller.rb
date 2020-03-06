@@ -10,7 +10,10 @@ class InformationsController < ApplicationController
     
   end
 
-  
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+  end
 
   private
 
@@ -23,8 +26,4 @@ class InformationsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
-  def destroy
-    @item = Item.find(params[:id])
-    @item.destroy
-  end
 end
