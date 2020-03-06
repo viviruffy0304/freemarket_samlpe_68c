@@ -34,16 +34,18 @@
                 %li
                   %a.init-right
                     = link_to"Child Menu", "#", id: "#"
-      - if !user_signed_in?
-        .listsRight
+      .listsRight
+        -if user_signed_in?
           %li.listsRight__item.listsRight__item--login
-            = link_to "ログイン", "/signin_users/show"
-          %li.listsRight__item.listsRight__item--new
-            = link_to "新規会員登録", "signup_users"
-      - else
-        .listsRight
+            = link_to "ログアウト", destroy_user_session_path, method: :delete
           %li.listsRight__item
             = link_to "マイページ", "/users"
+        - else
+          %li.listsRight__item.listsRight__item--login
+            = link_to "ログイン", new_user_session_path
+          %li.listsRight__item.listsRight__item--new
+            = link_to "新規会員登録", "signup_users"
+
 
 
 
