@@ -184,7 +184,7 @@
       height: 45px;
       display: block;
       text-align: center;
-      margin: 25px auto;
+      margin: auto;
       background-color: rgb(1, 218, 199);
       border-radius: 5px;
       transition: 0.4s;
@@ -194,7 +194,7 @@
       color: #eee;
       &:hover{
         transition: 0.2s;
-        background-color: rgb(0, 185, 170);
+        background-color: rgb(0, 190, 175);
       }
     }
     .item_sellBox{
@@ -202,13 +202,13 @@
       height: 45px;
       text-align: center;
       margin: 25px auto;
-      background-color: #3CCACE;
+      // background-color: #3CCACE;
       border-radius: 5px;
       transition: 0.4s;
-      border: solid #3CCACE;
+      border: solid #3CCACE 1px;
       &:hover{
         transition: 0.2s;
-        border: solid gold
+        // border: solid gold 1px;
       }
       input {
         width: 350px;

@@ -31,7 +31,7 @@
           .itemBox__body
             %ul
               %li
-                //= image_tag(@item.images.first.image.url)
+                = image_tag(@item.images.first.image.url)
                 %ul
                   %li
                     
@@ -56,11 +56,13 @@
                 %tr
                   %th 出品者
                   %td 
-                    =link_to @item.seller.nickname
+                    -# = link_to 
+                    = link_to "#" do
+                      = @user.nickname
                 %tr
                   %th カテゴリー
                   %td
-                    =@item.category
+                    =@item.category_id
                 %tr
                   %th ブランド
                   %td
@@ -92,10 +94,11 @@
           .page_manage
             .seller_btn
               - if user_signed_in? && current_user.id == @item.seller_id   
-                %a.item-edit-btn{href: "items/edit"}
-                  編集画面に進む
-                %a.item-delete-btn{href: "#"}
-                  削除する
+                .item-edit-btn
+                =link_to "編集する", edit_item_path, class: "item-edit-btn"
+                
+                .item-delete-btn
+                =link_to "削除する",information_path, method: :delete, class: 'item-delete-btn'
             .buyer_btn
               %a.item-buy-btn{href: "#"}
                 購入画面に進む

@@ -11,10 +11,11 @@
               = f.label :nickname, "ニックネーム"
               %span.form-require 必須
               = f.text_field :nickname,{class: "input-default", placeholder: "例) メルカリ太郎"}
-            .form-group
-              = f.label :email, "メールアドレス"
-              %span.form-require 必須
-              = f.text_field :email,{class: "input-default" ,placeholder: "PC・携帯どちらでも可"}
+            .form-mail
+              .form-mail_label
+                = f.label :email, "メールアドレス"
+                %span.form-require 必須
+              = f.text_field :email,{class: "input-default2" ,placeholder: "PC・携帯どちらでも可"}
             .form-group.form-password-revelation
               = f.label :password, "パスワード"
               %span.form-require 必須
@@ -29,25 +30,27 @@
               %h3.text-left.l-chapter-sub-head 本人確認
               %p.l-single-text
                 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
-            .form-group
-              = f.label :first_name, "名前(全角)"
-              %span.form-require 必須
-              = f.text_field :first_name,{class: "input-default", placeholder: "例) 山田"}
-              = f.text_field :last_name,{class: "input-default", placeholder: "例) 彩"}
-            .form-group
-              = f.label :f_first_name, "お名前カナ(全角)"
-              %span.form-require 必須
-              = f.text_field :f_first_name,{class: "input-default", placeholder: "例) ヤマダ"}
-              = f.text_field :f_last_name,{class: "input-default", placeholder: "例) アヤ"}
+            .form-names
+              .form-names-name
+                = f.label :first_name, "名前(全角)"
+                %span.form-require 必須
+              = f.text_field :first_name,{class: "input-default3", placeholder: "例) 山田"}
+              = f.text_field :last_name,{class: "input-default3", placeholder: "例) 彩"}
+              .form-names-name
+                = f.label :f_first_name, "お名前カナ(全角)"
+                %span.form-require 必須
+              = f.text_field :f_first_name,{class: "input-default3", placeholder: "例) ヤマダ"}
+              = f.text_field :f_last_name,{class: "input-default3", placeholder: "例) アヤ"}
             .form-group
               = f.label :birthday, "生年月日"
               %span.form-require 必須
-              = f.select :birthday_year,["--"], {} ,{class: "birthday-year-select", id: "year"}
-              年
-              = f.select :birthday_month, ["--"], {},{class: "birthday-month-select", id:"month"}
-              月
-              = f.select :birthday_day, ["--"], {},{class: "birthday-day-select", id:"day"}
-              日
+              .form-group_birthday
+                = f.select :birthday_year,["--"], {} ,{class: "birthday-year-select", id: "year"}
+                年
+                = f.select :birthday_month, ["--"], {},{class: "birthday-month-select", id:"month"}
+                月
+                = f.select :birthday_day, ["--"], {},{class: "birthday-day-select", id:"day"}
+                日
               %p.l-single-text.text-center
                 「次へ進む」のボタンを押すことは、
                 %a{href: "/jp/tos_list/", target: "_blank"}> 利用規約
