@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  root to: "informations#index"
+  root to: "signup_users#index"
 
   resources :informations, only: [:index , :show, :destroy]
   resources :tests, only: [:index , :show] do
@@ -37,5 +37,5 @@ Rails.application.routes.draw do
       get 'done'
     end
   end
-  
+
 end
