@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2020_03_02_055722) do
     t.integer "seller_id"
     t.integer "buyer_id"
     t.string "brand"
-    t.string "category_id"
+    t.string "category_id", null: false
     t.string "name", null: false
     t.text "description", null: false
     t.text "state", null: false
