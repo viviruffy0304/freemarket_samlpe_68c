@@ -61,8 +61,8 @@
                       = @user.nickname
                 %tr
                   %th カテゴリー
-                    
                   %td
+                    =@category.category
                 %tr
                   %th ブランド
                   %td
@@ -74,22 +74,41 @@
                 %tr
                   %th 商品の状態
                   %td 
-                    =@item.state
+                    -if @item.state == 2
+                      新品
+                    -elsif @item.state == 3
+                      中古
+                    -else 
+                      パチモン
                     
                 %tr
                   %th 配送料の負担
                   %td 
-                    =@item.postage
+                    -if@item.postage == 2
+                      送料込み
+                    -else @item.postage == 3
+                      着払い
                     
                 %tr
                   %th 発送元の地域
                   %td
-                    =@item.region
+                    -if@item.region == 2
+                      北海道
+                    -elsif @item.region == 3
+                      東京
+                    -else
+                      愛知
                     
                 %tr
                   %th 発送日の目安
                   %td 
-                    =@item.shipping_days
+                    -if@item.shipping_days == 2
+                      1~2日で発送
+                    -elsif @item.shipping_days == 3
+                      2~3日で発送
+                    -else 
+                      4~7日で発送
+
                     
           .page_manage
             .seller_btn
