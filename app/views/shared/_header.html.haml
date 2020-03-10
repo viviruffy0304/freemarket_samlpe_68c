@@ -2,7 +2,7 @@
   .headerInner
     .mainHeader
       %h1.icon
-        = link_to image_tag("logo.png", class: "icon_btn"), "#"
+        = link_to image_tag("logo.png", class: "icon_btn"), "/informations"
       .searchBox
         = form_with url: informations_path, local: true do |form|
           = form.text_field :text, class: "searchBox--input", placeholder: "キーワードから探す"
