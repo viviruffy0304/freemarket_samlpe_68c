@@ -62,7 +62,7 @@
                 %tr
                   %th カテゴリー
                   %td
-                    =@category.category
+                    //=@category.category
                 %tr
                   %th ブランド
                   %td
@@ -74,9 +74,9 @@
                 %tr
                   %th 商品の状態
                   %td 
-                    -if @item.state == 2
+                    -if @item.state == "2"
                       新品
-                    -elsif @item.state == 3
+                    -elsif @item.state == "3"
                       中古
                     -else 
                       パチモン
@@ -84,17 +84,17 @@
                 %tr
                   %th 配送料の負担
                   %td 
-                    -if@item.postage == 2
+                    -if@item.postage == "2"
                       送料込み
-                    -else @item.postage == 3
+                    -else @item.postage == "3"
                       着払い
                     
                 %tr
                   %th 発送元の地域
                   %td
-                    -if@item.region == 2
+                    -if@item.region == "2"
                       北海道
-                    -elsif @item.region == 3
+                    -elsif @item.region == "3"
                       東京
                     -else
                       愛知
@@ -102,9 +102,9 @@
                 %tr
                   %th 発送日の目安
                   %td 
-                    -if@item.shipping_days == 2
+                    -if@item.shipping_days == "2"
                       1~2日で発送
-                    -elsif @item.shipping_days == 3
+                    -elsif @item.shipping_days == "3"
                       2~3日で発送
                     -else 
                       4~7日で発送
