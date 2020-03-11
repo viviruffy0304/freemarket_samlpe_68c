@@ -17,7 +17,7 @@ class CardsController < ApplicationController
       customer = Payjp::Customer.retrieve(@card.customer_id)
       @card_information = customer.cards.retrieve(@card.card_id)
 
-      @card_brand = @card_information.brand      
+      @card_brand = @card_information.brand
       case @card_brand
       when "Visa"
         @card_src = "logo-visa.png"
