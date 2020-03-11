@@ -51,6 +51,7 @@ class ItemsController < ApplicationController
       :region, 
       :shipping_days, 
       :price, 
+      :text,
       images_attributes: [:id, :image]
     ).merge(seller_id: current_user.id)
   end
