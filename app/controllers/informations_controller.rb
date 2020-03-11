@@ -8,7 +8,8 @@ class InformationsController < ApplicationController
 
   def show
     @user = User.find(@item.seller_id)
-    #@category = Category.find(params[:id])
+    category_id = @item.category_id
+    @category = Category.find(category_id).category_name
   end
 
   def destroy

@@ -62,7 +62,12 @@
                 %tr
                   %th カテゴリー
                   %td
-                    //=@category.category
+                    -if @category == "2"
+                      レディース
+                    -elsif @category =="3"
+                      メンズ
+                    -else @category =="4"
+                      ベビー
                 %tr
                   %th ブランド
                   %td
