@@ -42,13 +42,13 @@ class ItemsController < ApplicationController
   end
 
   def pay
-    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    Payjp.api_key = ENV['PAYJP_ACCESS_KEY']
     Payjp::Charge.create(
       amount: @item.price, # 決済する値段
       card: params['payjp-token'], # フォームを送信すると生成されるトークン
       currency: 'jpy'
     )
-    @items.update( buyer_id: current_user.id)
+    @item.update( buyer_id: current_user.id)
     redirect_to done_items_path
   end
 
