@@ -42,7 +42,7 @@ class ItemsController < ApplicationController
   end
 
   def pay
-    Payjp.api_key = ENV['PAYJP_ACCESS_KEY']
+    Payjp.api_key = 'sk_test_9c5b009b4c2db8f24416cfd2'
     Payjp::Charge.create(
       amount: @item.price, # 決済する値段
       card: params['payjp-token'], # フォームを送信すると生成されるトークン
