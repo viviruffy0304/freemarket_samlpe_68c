@@ -2,7 +2,7 @@ class CardsController < ApplicationController
   require "payjp"
   before_action :set_card
 
-  def new # カードの登録画面。送信ボタンを押すとcreateアクションへ。
+  def new 
     card = Card.where(user_id: current_user.id).first
     redirect_to action: "index" if card.present?
   end
@@ -11,13 +11,12 @@ class CardsController < ApplicationController
     
   end
 
-  def show #CardのデータをPayjpに送って情報を取り出す
+  def show 
     if @card.present?
       Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
       customer = Payjp::Customer.retrieve(@card.customer_id)
       @card_information = customer.cards.retrieve(@card.card_id)
 
-      # 《＋α》 登録しているカード会社のブランドアイコンを表示するためのコードです。---------
       @card_brand = @card_information.brand      
       case @card_brand
       when "Visa"
