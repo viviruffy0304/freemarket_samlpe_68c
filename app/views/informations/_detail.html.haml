@@ -62,12 +62,7 @@
                 %tr
                   %th カテゴリー
                   %td
-                    -if @category == "2"
-                      レディース
-                    -elsif @category =="3"
-                      メンズ
-                    -else @category =="4"
-                      ベビー
+                    =@category
                 %tr
                   %th ブランド
                   %td
@@ -83,17 +78,20 @@
                       新品
                     -elsif @item.state == "3"
                       中古
-                    -else 
+                    -elsif @item.state == "4"
                       パチモン
+                    -else 
+                      選択してください
                     
                 %tr
                   %th 配送料の負担
                   %td 
                     -if@item.postage == "2"
                       送料込み
-                    -else @item.postage == "3"
+                    -elsif @item.postage == "3"
                       着払い
-                    
+                    -else 
+                    選択してください
                 %tr
                   %th 発送元の地域
                   %td
@@ -101,8 +99,10 @@
                       北海道
                     -elsif @item.region == "3"
                       東京
-                    -else
+                    -elsif @item.region == "4"
                       愛知
+                    -else
+                      選択してください
                     
                 %tr
                   %th 発送日の目安
@@ -111,10 +111,11 @@
                       1~2日で発送
                     -elsif @item.shipping_days == "3"
                       2~3日で発送
-                    -else 
+                    -elsif @item.shipping_days == "4"
                       4~7日で発送
+                    -else 
+                      選択してください
 
-                    
           .page_manage
             .seller_btn
               - if user_signed_in? && current_user.id == @item.seller_id   
