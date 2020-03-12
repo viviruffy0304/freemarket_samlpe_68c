@@ -15,6 +15,7 @@ class ItemsController < ApplicationController
     # Team.create(item_params)
     @item = Item.new(item_params)
     if @item.save
+
       # flash[:success] = "商品を登録しました"
       # session[:user_id] = @user.id # ログイン状態維持のためuser_idをsessionに保存
       
@@ -37,7 +38,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to informations_path
     else
-      render '/items/edit' unless @item.valid?
+      render '#' unless @item.valid?
     end
   end
 
